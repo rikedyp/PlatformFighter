@@ -4,10 +4,10 @@ extends Node
 const default_port = 14204 # 8910
 
 # Max number of players
-const max_peers = 6
+const max_peers = 2
 
-# Game # laps
-var max_laps = 3
+# Match # rounds
+var max_rounds = 3
 
 # Details for my player
 var my_player
@@ -84,19 +84,18 @@ remote func unregister_player(id):
 	players.erase(id)
 	emit_signal("player_list_changed")
 
-remote func register_vehicle(id, new_player_scene, new_player_animation):
+remote func register_fighter(id, new_player_scene):
 	if new_player_scene == "":
 		players[id]["ready"] = false
 	else:
 		players[id]["ready"] = true
 	players[id]["scene_file"] = new_player_scene
-	players[id]["animation"] = new_player_animation
 	emit_signal("player_list_changed")
 
-remote func pre_start_game(spawn_points, max_laps):
+remote func pre_start_game(spawn_points, max_rounds):
 	# Change scene
 	var world = load("res://assets/stages/test_stage.tscn").instance()
-	world.max_laps = max_laps
+	world.max_rounds = max_rounds
 	get_tree().get_root().add_child(world)
 	get_tree().get_root().get_node("lobby").hide()
 	#var player_scene = load(vehicle_scene)
@@ -110,15 +109,12 @@ remote func pre_start_game(spawn_points, max_laps):
 			player.set_name(str(p_id)) # set unique id as node name
 			player.position = spawn_pos
 			player.set_player_name(my_player_info["name"])
-			player.set_animation(my_player_info["animation"])
-			player.set_camera()
 		else:
 			# Otherwise set up player from peer
 			player = load(players[p_id]["scene_file"]).instance()
 			player.set_name(str(p_id))
 			player.position = spawn_pos
 			player.set_player_name(players[p_id]["name"])
-			player.set_animation(players[p_id]["animation"])
 		player.set_network_master(p_id) #set unique id as master
 		world.get_node("players").add_child(player)
 	if not get_tree().is_network_server():
@@ -138,6 +134,7 @@ remote func ready_to_start(id):
 
 func host_game(new_player_name):
 	my_player_info["name"] = new_player_name
+	#my_player_info["ready"] = true
 	var host = NetworkedMultiplayerENet.new()
 	#host.set_compression_mode(NetworkedMultiplayerENet.COMPRESS_RANGE_CODER)
 	var err = host.create_server(default_port, max_peers) # max: 1 peer, since it's a 2 players game
@@ -192,9 +189,9 @@ func begin_game():
 		spawn_point_idx += 1
 	# Call to pre-start game with the spawn points, vehicle types and colours
 	for p in players:
-		rpc_id(p, "pre_start_game", spawn_points, max_laps)
+		rpc_id(p, "pre_start_game", spawn_points, max_rounds)
 
-	pre_start_game(spawn_points, max_laps)
+	pre_start_game(spawn_points, max_rounds)
 
 func see_children(node):
 	print("-----")
@@ -224,19 +221,19 @@ func _ready():
 	get_tree().connect("connection_failed", self, "_connected_fail")
 	get_tree().connect("server_disconnected", self, "_server_disconnected")
 
-func set_vehicle_properties(scene_file, animation):
+func ready_player():
 	my_player_info["ready"] = true
-	my_player_info["scene_file"] = scene_file
-	my_player_info["animation"] = animation
-	rpc("register_vehicle", get_tree().get_network_unique_id(), scene_file, animation)
-	emit_signal("player_list_changed")
+	rpc("register_fighter", get_tree().get_network_unique_id(), my_player_info["scene_file"])
 	
 func still_choosing():
 	my_player_info["ready"] = false
 	emit_signal("player_list_changed")
 
-sync func set_max_laps(laps):
-	max_laps = laps
+sync func set_max_rounds(rounds):
+	max_rounds = rounds
 
 remote func update_score(id, score):
 	players[id]["score"] = score
+
+func respawn_player():
+	pass

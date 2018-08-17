@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://gd/test_stage.gd" type="Script" id=1]
 [ext_resource path="res://assets/stages/yellow_button02.png" type="Texture" id=2]
-[ext_resource path="res://assets/fighters/ninja/ninja.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/ui/kenney_ui/PNG/grey_button14.png" type="Texture" id=3]
+[ext_resource path="res://assets/fonts/montserrat.otf" type="DynamicFontData" id=4]
 
 [sub_resource type="PhysicsMaterial" id=1]
 
@@ -26,6 +27,16 @@ extents = Vector2( 537.231, 45.4762 )
 custom_solver_bias = 0.0
 extents = Vector2( 214.05, 60.1386 )
 
+[sub_resource type="DynamicFont" id=5]
+
+size = 30
+outline_size = 0
+outline_color = Color( 1, 1, 1, 1 )
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 4 )
+_sections_unfolded = [ "Font", "Settings" ]
+
 [node name="test_stage" type="Node2D"]
 script = ExtResource( 1 )
 zoom_factor = 0.2
@@ -46,7 +57,6 @@ scale = Vector2( 5.65629, 2.25448 )
 texture = ExtResource( 2 )
 
 [node name="floor" type="StaticBody2D" parent="."]
-editor/display_folded = true
 input_pickable = false
 collision_layer = 1
 collision_mask = 2
@@ -78,17 +88,13 @@ shape = SubResource( 4 )
 
 [node name="players" type="Node2D" parent="."]
 
-[node name="player" parent="players" instance=ExtResource( 3 )]
-position = Vector2( 501.543, 122.682 )
-active = true
-
-[node name="player_2" parent="players" instance=ExtResource( 3 )]
-position = Vector2( 794.64, 197.66 )
-
 [node name="spawn_points" type="Node2D" parent="."]
 
 [node name="0" type="Position2D" parent="spawn_points"]
-position = Vector2( 485.98, 38.9604 )
+position = Vector2( 274.507, 94.3462 )
+
+[node name="1" type="Position2D" parent="spawn_points"]
+position = Vector2( 725.146, 106.934 )
 
 [node name="instructions" type="Label" parent="."]
 anchor_left = 0.0
@@ -134,4 +140,37 @@ drag_margin_bottom = 0.2
 editor_draw_screen = true
 editor_draw_limits = false
 editor_draw_drag_margin = false
+
+[node name="countdown" type="Sprite" parent="."]
+position = Vector2( 495.664, 109.109 )
+texture = ExtResource( 3 )
+
+[node name="label" type="Label" parent="countdown"]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -45.0
+margin_top = -22.0
+margin_right = 52.0
+margin_bottom = 16.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Ready"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Custom Fonts", "custom_fonts/font" ]
+
+[node name="timer" type="Timer" parent="countdown"]
+process_mode = 1
+wait_time = 1.0
+one_shot = false
+autostart = false
 

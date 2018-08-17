@@ -9,7 +9,11 @@ func _ready():
 	for button in $player_select/player_buttons.get_children():
 		print(button.name)
 		var func_name = "_on_" + button.name + "_pressed"
+		var toggle_name = "_on_" + button.name + "_toggled"
 		button.connect("pressed", self, func_name)
+		button.connect("toggled", self, toggle_name)
+	$player_select/ready.connect("pressed", self, "_on_ready_pressed")
+	$players/start.connect("pressed", self, "_on_start_pressed")
 	# Connect gamestate functions
 	gamestate.connect("connection_failed", self, "_on_connection_failed")
 	gamestate.connect("connection_succeeded", self, "_on_connection_success")
@@ -29,8 +33,10 @@ func _on_host_pressed():
 	if get_node("connect/name").text == "":
 		get_node("connect/error_label").text = "Invalid name!"
 		return
-	get_node("connect").hide()
-	get_node("player_select").show()
+	$connect.hide()
+	# Only host accesses some settings
+	# TODO: Consider voting process (majority rules or MKart style)
+	$player_select.show()
 	# Only host can set game options e.g. # rounds
 	get_node("connect/error_label").text = ""
 	var player_name = get_node("connect/name").text
@@ -54,8 +60,7 @@ func _on_join_pressed():
 
 func _on_connection_success():
 	get_node("connect").hide()
-	get_node("players").show()
-	get_node("vehicle_select").show()
+	get_node("player_select").show()
 
 func _on_connection_failed():
 	get_node("connect/host").disabled = false
@@ -87,9 +92,9 @@ func refresh_lobby(): # sync func?
 			var p = players[p_id]["name"]
 			if not players[p_id]["ready"]:
 				if p_id == get_tree().get_network_unique_id():
-					p += " (You) [Choosing vehicle...]"
+					p += " (You) [Choosing...]"
 				else:
-					p += " [Choosing vehicle...]"
+					p += " [Choosing...]"
 			else:
 				if p_id == get_tree().get_network_unique_id():
 					p += " (You) [Ready.]"
@@ -100,7 +105,7 @@ func refresh_lobby(): # sync func?
 	get_node("players/start").disabled = not get_tree().is_network_server()
 
 func _on_start_pressed():
-	gamestate.rpc("set_max_laps",int($vehicle_select/laps.text))
+	gamestate.rpc("set_max_rounds",int($settings/list/rounds.text))
 	gamestate.begin_game()
 
 func free_child_nodes(node):
@@ -112,39 +117,22 @@ func _on_player_button_pressed():
 	pass
 
 func _on_ninja_pressed():
+	gamestate.my_player_info["scene_file"] = "res://assets/fighters/ninja/ninja.tscn"
 	print("NINJA")
 
-func _on_ready_toggled(button_pressed):
-	if button_pressed:
-		# Disable vehicle choice buttons
-		for button in get_node("vehicle_select/vehicle_buttons").get_children():
-			if button.get_class() == "TextureButton":
-				button.disabled = true
+func _on_ninja_toggled(pressed):
+	if pressed:
+		$player_select/ready.disabled = false
 	else:
-		# Enable vehicle choice buttons
-		for button in get_node("vehicle_select/vehicle_buttons").get_children():
-			if button.get_class() == "TextureButton":
-				button.disabled = false
-	# Set vehicle properties for this player
-	if button_pressed:
-		$vehicle_select/choose.text = "CHOOSE AGAIN"
-		gamestate.set_vehicle_properties(player_scene, player_animation)
-	else:
-		$vehicle_select/choose.text = "CHOOSE"
-		gamestate.still_choosing()
-#	if button_pressed:
-#		# TODO condense toggled calls
-#		_on_sedan_toggled(false)
-#		_on_cavallo_toggled(false)
-#		$vehicle_select/vehicle_buttons/bradipo_nero.show()
-#		$vehicle_select/vehicle_buttons/sedan.set_pressed(false)
-#		$vehicle_select/vehicle_buttons/cavallo.set_pressed(false)
-#	else:
-#		$vehicle_select/vehicle_buttons/bradipo_nero.hide()
-#		$vehicle_select/vehicle_buttons/cavallo_black.hide()
-#		$vehicle_select/vehicle_buttons/cavallo_blue.hide()
-#		$vehicle_select/vehicle_buttons/cavallo_grey.hide()
-#	pass # replace with function body
+		$player_select/ready.disabled = true
 
+func _on_ready_pressed():
+	gamestate.ready_player()
+	#gamestate.my_player_info["ready"] = true
+	$player_select.hide()
+	$players.show()
+	if get_tree().get_network_unique_id() == 1:
+		$settings.show()
+	refresh_lobby()
 
 

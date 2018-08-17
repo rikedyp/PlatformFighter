@@ -16,7 +16,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Platform Fighter"
-run/main_scene="res://assets/stages/test_stage.tscn"
+run/main_scene="res://assets/ui/lobby.tscn"
 config/icon="res://icon.png"
 
 [autoload]

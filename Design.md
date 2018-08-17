@@ -1,0 +1,80 @@
+# Platform Fighter (Working Title)
+Open Source TowerFall / Smash Bros esque fighting game
+Made with Godot 3
+
+Design notes and future ideas
+
+CONTENTS  
+[Overview](#overview)  
+[Gameplay](#gameplay)  
+[Godot project structure](#godot-project-structure)  
+[Multiplayer methods](#multiplayer-methods)
+[Future ideas](#future-ideas)  
+[Fighters](#fighters)
+[Stages](#stages)
+  
+### Overview
+- Open Source Towerfall / Smash Bros clone
+
+### Gameplay
+- User stories
+	- 1 Title screen
+		- Solo
+		- Multiplayer
+	- 2 Multiplayer lobby
+		- Text Input host IP address
+- Simple gravity
+- Player stabs or shoots
+
+### Multiplayer methods
+- Based on the multiplayer bomber in Godot demo projects
+
+### Godot project structure
+- Design.md
+	This document
+- LICENSE
+	Licensing information
+- README.md
+	Github page readme
+- dev
+	Development folder
+	- project.godot
+	- icon.png
+	- assets
+		- fighters
+		- baddies [not used]
+		- fonts
+		- stages
+		- ui
+	- gd
+		All .gd scripts
+	- bin
+		Development binaries by date
+
+- release
+	Release binaries by version
+
+### Future ideas
+- Quick fall maybe
+- Game option choosing process
+	- Majority rule
+	- Dictatorship
+	- Vote then random like MK8
+	- Random selection
+- Teams
+	- Toggle friendly fire
+- Dodge 
+	- Super dodge
+	
+### Fighters
+- Ninja
+	- Can walk on air if they crane jump on ledge
+	- Stab attack
+	- Head jump attack
+- Pirate
+	- Shoot attack (lead shot)
+	- Head jump attack
+
+### Stages
+- Test stage
+	- TODO: Shakey 'READY', 'FIGHT' graphics

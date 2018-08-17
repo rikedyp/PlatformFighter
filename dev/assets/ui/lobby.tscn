@@ -155,29 +155,6 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="list" type="ItemList" parent="player_select"]
-visible = false
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 25.0
-margin_top = 37.0
-margin_right = 229.0
-margin_bottom = 296.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = true
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 2
-size_flags_vertical = 2
-items = [  ]
-select_mode = 0
-allow_reselect = false
-icon_mode = 1
-fixed_icon_size = Vector2( 0, 0 )
-
 [node name="player_buttons" type="VBoxContainer" parent="player_select"]
 editor/display_folded = true
 anchor_left = 0.0
@@ -318,53 +295,6 @@ group = null
 text = "READY"
 flat = false
 align = 1
-
-[node name="rounds" type="LineEdit" parent="player_select"]
-visible = false
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 23.0
-margin_top = 513.0
-margin_right = 149.0
-margin_bottom = 543.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 1
-size_flags_horizontal = 1
-size_flags_vertical = 1
-text = "3"
-secret_character = "*"
-focus_mode = 2
-context_menu_enabled = true
-clear_button_enabled = false
-placeholder_alpha = 0.6
-caret_blink = false
-caret_blink_speed = 0.65
-caret_position = 0
-
-[node name="rounds_label" type="Label" parent="player_select/rounds"]
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 138.0
-margin_top = 9.0
-margin_right = 217.0
-margin_bottom = 23.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 2
-size_flags_vertical = 0
-text = "sDNUOR"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
 
 [node name="connect" type="Panel" parent="."]
 editor/display_folded = true
@@ -563,6 +493,111 @@ window_title = "Alert!"
 resizable = false
 dialog_hide_on_ok = true
 _sections_unfolded = [ "Dialog" ]
+
+[node name="settings" type="Panel" parent="."]
+visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 544.0
+margin_top = 141.0
+margin_right = 904.0
+margin_bottom = 499.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+
+[node name="list" type="ItemList" parent="settings"]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 44.0
+margin_top = 48.0
+margin_right = 310.0
+margin_bottom = 332.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = true
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+items = [  ]
+select_mode = 0
+allow_reselect = false
+icon_mode = 1
+fixed_icon_size = Vector2( 0, 0 )
+
+[node name="rounds" type="LineEdit" parent="settings/list"]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 14.0
+margin_top = 15.0
+margin_right = 140.0
+margin_bottom = 45.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 1
+size_flags_horizontal = 1
+size_flags_vertical = 1
+text = "3"
+secret_character = "*"
+focus_mode = 2
+context_menu_enabled = true
+clear_button_enabled = false
+placeholder_alpha = 0.6
+caret_blink = false
+caret_blink_speed = 0.65
+caret_position = 0
+
+[node name="rounds_label" type="Label" parent="settings/list/rounds"]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 138.0
+margin_top = 9.0
+margin_right = 217.0
+margin_bottom = 23.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 2
+size_flags_vertical = 0
+text = "Rounds"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="label" type="Label" parent="settings"]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 144.0
+margin_top = 16.0
+margin_right = 204.0
+margin_bottom = 30.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "SETTINGS"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
 
 [connection signal="pressed" from="players/start" to="." method="_on_start_pressed"]
 [connection signal="toggled" from="player_select/player_buttons/ninja" to="." method="_on_sedan_toggled"]

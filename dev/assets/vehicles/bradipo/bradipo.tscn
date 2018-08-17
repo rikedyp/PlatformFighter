@@ -1,0 +1,120 @@
+[gd_scene load_steps=20 format=2]
+
+[ext_resource path="res://gd/basic_sedan.gd" type="Script" id=1]
+[ext_resource path="res://assets/vehicles/bradipo/black/c07_s128_iso_0153.png" type="Texture" id=2]
+[ext_resource path="res://assets/vehicles/bradipo/black/c07_s128_iso_0154.png" type="Texture" id=3]
+[ext_resource path="res://assets/vehicles/bradipo/black/c07_s128_iso_0155.png" type="Texture" id=4]
+[ext_resource path="res://assets/vehicles/bradipo/black/c07_s128_iso_0156.png" type="Texture" id=5]
+[ext_resource path="res://assets/vehicles/bradipo/black/c07_s128_iso_0157.png" type="Texture" id=6]
+[ext_resource path="res://assets/vehicles/bradipo/black/c07_s128_iso_0158.png" type="Texture" id=7]
+[ext_resource path="res://assets/vehicles/bradipo/black/c07_s128_iso_0159.png" type="Texture" id=8]
+[ext_resource path="res://assets/vehicles/bradipo/black/c07_s128_iso_0160.png" type="Texture" id=9]
+[ext_resource path="res://assets/vehicles/bradipo/black/c07_s128_iso_0145.png" type="Texture" id=10]
+[ext_resource path="res://assets/vehicles/bradipo/black/c07_s128_iso_0146.png" type="Texture" id=11]
+[ext_resource path="res://assets/vehicles/bradipo/black/c07_s128_iso_0147.png" type="Texture" id=12]
+[ext_resource path="res://assets/vehicles/bradipo/black/c07_s128_iso_0148.png" type="Texture" id=13]
+[ext_resource path="res://assets/vehicles/bradipo/black/c07_s128_iso_0149.png" type="Texture" id=14]
+[ext_resource path="res://assets/vehicles/bradipo/black/c07_s128_iso_0150.png" type="Texture" id=15]
+[ext_resource path="res://assets/vehicles/bradipo/black/c07_s128_iso_0151.png" type="Texture" id=16]
+[ext_resource path="res://assets/vehicles/bradipo/black/c07_s128_iso_0152.png" type="Texture" id=17]
+
+[sub_resource type="SpriteFrames" id=1]
+
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ) ],
+"loop": true,
+"name": "nero",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+
+custom_solver_bias = 0.0
+extents = Vector2( 14.0957, 10 )
+
+[node name="bradipo" type="KinematicBody2D"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 7
+collision/safe_margin = 0.08
+script = ExtResource( 1 )
+_sections_unfolded = [ "Collision", "collision" ]
+top_speed = 300
+power = 500.0
+braking = 1000.0
+handling = 5.0
+friction = 1.02
+active = null
+
+[node name="animated_sprite" type="AnimatedSprite" parent="." index="0"]
+
+modulate = Color( 0.863281, 0.647461, 0, 1 )
+position = Vector2( -50.3795, -45.2858 )
+scale = Vector2( 0.740286, 0.740286 )
+frames = SubResource( 1 )
+animation = "nero"
+centered = false
+_sections_unfolded = [ "Material", "Visibility" ]
+
+[node name="hit_box" type="CollisionShape2D" parent="." index="1"]
+
+position = Vector2( -6.47516, 0.330062 )
+rotation = -0.523599
+scale = Vector2( 3.22818, 2.62156 )
+shape = SubResource( 2 )
+_sections_unfolded = [ "Transform", "Z Index" ]
+
+[node name="camera" type="Camera2D" parent="." index="2"]
+
+anchor_mode = 1
+rotating = false
+current = false
+zoom = Vector2( 1, 1 )
+limit_left = -10000000
+limit_top = -10000000
+limit_right = 10000000
+limit_bottom = 10000000
+limit_smoothed = false
+drag_margin_h_enabled = true
+drag_margin_v_enabled = true
+smoothing_enabled = false
+smoothing_speed = 5.0
+offset_v = 0.0
+offset_h = 0.0
+drag_margin_left = 0.2
+drag_margin_top = 0.2
+drag_margin_right = 0.2
+drag_margin_bottom = 0.2
+editor_draw_screen = true
+editor_draw_limits = false
+editor_draw_drag_margin = false
+
+[node name="label" type="Label" parent="." index="3"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -23.0
+margin_top = -60.0
+margin_right = 17.0
+margin_bottom = -46.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="timer" type="Timer" parent="." index="4"]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = false
+autostart = false
+
+

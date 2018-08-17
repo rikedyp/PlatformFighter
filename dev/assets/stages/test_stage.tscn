@@ -1,0 +1,137 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://gd/test_stage.gd" type="Script" id=1]
+[ext_resource path="res://assets/stages/yellow_button02.png" type="Texture" id=2]
+[ext_resource path="res://assets/fighters/ninja/ninja.tscn" type="PackedScene" id=3]
+
+[sub_resource type="PhysicsMaterial" id=1]
+
+friction = 1.0
+rough = false
+bounce = 0.0
+absorbent = false
+
+[sub_resource type="RectangleShape2D" id=2]
+
+custom_solver_bias = 0.0
+extents = Vector2( 106.132, 10 )
+
+[sub_resource type="RectangleShape2D" id=3]
+
+custom_solver_bias = 0.0
+extents = Vector2( 537.231, 45.4762 )
+
+[sub_resource type="RectangleShape2D" id=4]
+
+custom_solver_bias = 0.0
+extents = Vector2( 214.05, 60.1386 )
+
+[node name="test_stage" type="Node2D"]
+script = ExtResource( 1 )
+zoom_factor = 0.2
+
+[node name="yellow_button02" type="Sprite" parent="."]
+position = Vector2( 281.948, 263.463 )
+scale = Vector2( 1.11154, 0.377915 )
+texture = ExtResource( 2 )
+
+[node name="yellow_button3" type="Sprite" parent="."]
+position = Vector2( 713.297, 262.571 )
+scale = Vector2( 1.11154, 0.377915 )
+texture = ExtResource( 2 )
+
+[node name="yellow_button02 2" type="Sprite" parent="."]
+position = Vector2( 507.05, 484.606 )
+scale = Vector2( 5.65629, 2.25448 )
+texture = ExtResource( 2 )
+
+[node name="floor" type="StaticBody2D" parent="."]
+editor/display_folded = true
+input_pickable = false
+collision_layer = 1
+collision_mask = 2
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+physics_material_override = SubResource( 1 )
+
+[node name="hit_box" type="CollisionShape2D" parent="floor"]
+position = Vector2( 281.873, 263.784 )
+shape = SubResource( 2 )
+
+[node name="hit_box2" type="CollisionShape2D" parent="floor"]
+position = Vector2( 712.972, 262.277 )
+shape = SubResource( 2 )
+
+[node name="hit_box3" type="CollisionShape2D" parent="floor"]
+position = Vector2( 507.973, 474.812 )
+shape = SubResource( 3 )
+
+[node name="hit_box4" type="CollisionShape2D" parent="floor"]
+position = Vector2( 1249.64, 377.164 )
+shape = SubResource( 4 )
+
+[node name="hit_box5" type="CollisionShape2D" parent="floor"]
+position = Vector2( -231.751, 372.62 )
+shape = SubResource( 4 )
+
+[node name="players" type="Node2D" parent="."]
+
+[node name="player" parent="players" instance=ExtResource( 3 )]
+position = Vector2( 501.543, 122.682 )
+active = true
+
+[node name="player_2" parent="players" instance=ExtResource( 3 )]
+position = Vector2( 794.64, 197.66 )
+
+[node name="spawn_points" type="Node2D" parent="."]
+
+[node name="0" type="Position2D" parent="spawn_points"]
+position = Vector2( 485.98, 38.9604 )
+
+[node name="instructions" type="Label" parent="."]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 40.0
+margin_bottom = 14.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 0
+text = "Move - WASD
+Attack - Slash [/]
+Dodge - Dot [.]"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="camera" type="Camera2D" parent="."]
+position = Vector2( 504.901, 278.951 )
+anchor_mode = 1
+rotating = false
+current = true
+zoom = Vector2( 1, 1 )
+limit_left = -10000000
+limit_top = -10000000
+limit_right = 10000000
+limit_bottom = 10000000
+limit_smoothed = false
+drag_margin_h_enabled = true
+drag_margin_v_enabled = true
+smoothing_enabled = false
+smoothing_speed = 5.0
+offset_v = 0.0
+offset_h = 0.0
+drag_margin_left = 0.2
+drag_margin_top = 0.2
+drag_margin_right = 0.2
+drag_margin_bottom = 0.2
+editor_draw_screen = true
+editor_draw_limits = false
+editor_draw_drag_margin = false
+

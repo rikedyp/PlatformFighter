@@ -75,7 +75,7 @@ active = false
 position = Vector2( 0.440125, 0.487671 )
 frames = SubResource( 1 )
 animation = "idle"
-frame = 3
+frame = 2
 playing = true
 
 [node name="body_box" type="CollisionShape2D" parent="."]

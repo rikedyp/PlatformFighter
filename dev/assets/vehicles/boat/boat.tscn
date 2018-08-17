@@ -1,0 +1,200 @@
+[gd_scene load_steps=19 format=2]
+
+[ext_resource path="res://gd/boat.gd" type="Script" id=1]
+[ext_resource path="res://assets/vehicles/boat/layers/0.png" type="Texture" id=2]
+[ext_resource path="res://assets/vehicles/boat/layers/1.png" type="Texture" id=3]
+[ext_resource path="res://assets/vehicles/boat/layers/2.png" type="Texture" id=4]
+[ext_resource path="res://assets/vehicles/boat/layers/3.png" type="Texture" id=5]
+[ext_resource path="res://assets/vehicles/boat/layers/4.png" type="Texture" id=6]
+[ext_resource path="res://assets/vehicles/boat/layers/5.png" type="Texture" id=7]
+[ext_resource path="res://assets/vehicles/boat/layers/6.png" type="Texture" id=8]
+[ext_resource path="res://assets/vehicles/boat/layers/7.png" type="Texture" id=9]
+[ext_resource path="res://assets/vehicles/boat/layers/8.png" type="Texture" id=10]
+[ext_resource path="res://assets/vehicles/boat/layers/9.png" type="Texture" id=11]
+[ext_resource path="res://assets/vehicles/boat/layers/10.png" type="Texture" id=12]
+[ext_resource path="res://assets/vehicles/boat/layers/11.png" type="Texture" id=13]
+[ext_resource path="res://assets/vehicles/boat/layers/12.png" type="Texture" id=14]
+[ext_resource path="res://assets/vehicles/boat/layers/13.png" type="Texture" id=15]
+[ext_resource path="res://assets/vehicles/boat/layers/14.png" type="Texture" id=16]
+[ext_resource path="res://assets/vehicles/boat/layers/15.png" type="Texture" id=17]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 11.2105, 32.6959 )
+
+[node name="boat" type="KinematicBody2D"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+collision/safe_margin = 0.08
+script = ExtResource( 1 )
+_sections_unfolded = [ "Pickable" ]
+top_speed = 720
+power = 500.0
+braking = 500.0
+handling = 0.5
+friction = 1.01
+active = true
+
+[node name="camera" type="Camera2D" parent="." index="0"]
+
+anchor_mode = 1
+rotating = false
+current = true
+zoom = Vector2( 1, 1 )
+limit_left = -10000000
+limit_top = -10000000
+limit_right = 10000000
+limit_bottom = 10000000
+limit_smoothed = false
+drag_margin_h_enabled = true
+drag_margin_v_enabled = true
+smoothing_enabled = false
+smoothing_speed = 5.0
+offset_v = 0.0
+offset_h = 0.0
+drag_margin_left = 0.2
+drag_margin_top = 0.2
+drag_margin_right = 0.2
+drag_margin_bottom = 0.2
+editor_draw_screen = true
+editor_draw_limits = false
+editor_draw_drag_margin = false
+
+[node name="hit_box" type="CollisionShape2D" parent="." index="1"]
+
+position = Vector2( 36.0196, 13.9668 )
+shape = SubResource( 1 )
+
+[node name="label" type="Label" parent="." index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 40.0
+margin_bottom = 14.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="sprite_layers" type="Node2D" parent="." index="3"]
+
+editor/display_folded = true
+
+[node name="0" type="Sprite" parent="sprite_layers" index="0"]
+
+position = Vector2( 35.8052, 20.271 )
+rotation = -1.5708
+texture = ExtResource( 2 )
+
+[node name="1" type="Sprite" parent="sprite_layers" index="1"]
+
+position = Vector2( 35.8052, 19.271 )
+rotation = -1.5708
+texture = ExtResource( 3 )
+
+[node name="2" type="Sprite" parent="sprite_layers" index="2"]
+
+position = Vector2( 35.8052, 18.271 )
+rotation = -1.5708
+texture = ExtResource( 4 )
+
+[node name="3" type="Sprite" parent="sprite_layers" index="3"]
+
+position = Vector2( 35.8052, 17.271 )
+rotation = -1.5708
+texture = ExtResource( 5 )
+
+[node name="4" type="Sprite" parent="sprite_layers" index="4"]
+
+position = Vector2( 35.8052, 16.271 )
+rotation = -1.5708
+texture = ExtResource( 6 )
+
+[node name="5" type="Sprite" parent="sprite_layers" index="5"]
+
+position = Vector2( 35.8052, 15.271 )
+rotation = -1.5708
+texture = ExtResource( 7 )
+
+[node name="6" type="Sprite" parent="sprite_layers" index="6"]
+
+position = Vector2( 35.8052, 14.271 )
+rotation = -1.5708
+texture = ExtResource( 8 )
+
+[node name="7" type="Sprite" parent="sprite_layers" index="7"]
+
+position = Vector2( 35.8052, 13.271 )
+rotation = -1.5708
+texture = ExtResource( 9 )
+
+[node name="8" type="Sprite" parent="sprite_layers" index="8"]
+
+position = Vector2( 35.8052, 12.271 )
+rotation = -1.5708
+texture = ExtResource( 10 )
+
+[node name="9" type="Sprite" parent="sprite_layers" index="9"]
+
+position = Vector2( 35.8052, 11.271 )
+rotation = -1.5708
+texture = ExtResource( 11 )
+
+[node name="10" type="Sprite" parent="sprite_layers" index="10"]
+
+position = Vector2( 35.8052, 10.271 )
+rotation = -1.5708
+texture = ExtResource( 12 )
+
+[node name="11" type="Sprite" parent="sprite_layers" index="11"]
+
+position = Vector2( 35.8052, 9.27101 )
+rotation = -1.5708
+texture = ExtResource( 13 )
+
+[node name="12" type="Sprite" parent="sprite_layers" index="12"]
+
+position = Vector2( 35.8052, 8.27101 )
+rotation = -1.5708
+texture = ExtResource( 14 )
+
+[node name="13" type="Sprite" parent="sprite_layers" index="13"]
+
+position = Vector2( 35.8052, 7.27101 )
+rotation = -1.5708
+texture = ExtResource( 15 )
+
+[node name="14" type="Sprite" parent="sprite_layers" index="14"]
+
+position = Vector2( 35.8052, 6.27101 )
+rotation = -1.5708
+texture = ExtResource( 16 )
+
+[node name="15" type="Sprite" parent="sprite_layers" index="15"]
+
+position = Vector2( 35.8052, 5.27101 )
+rotation = -1.5708
+texture = ExtResource( 17 )
+
+[node name="animated_sprite" type="AnimatedSprite" parent="." index="4"]
+
+animation = "default"
+
+[node name="timer" type="Timer" parent="." index="5"]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = false
+autostart = false
+
+

@@ -1,0 +1,187 @@
+[gd_scene load_steps=130 format=2]
+
+[ext_resource path="res://assets/vehicles/bradipo/black/c07_s128_iso_0145.png" type="Texture" id=1]
+[ext_resource path="res://assets/vehicles/bradipo/black/c07_s128_iso_0146.png" type="Texture" id=2]
+[ext_resource path="res://assets/vehicles/bradipo/black/c07_s128_iso_0147.png" type="Texture" id=3]
+[ext_resource path="res://assets/vehicles/bradipo/black/c07_s128_iso_0148.png" type="Texture" id=4]
+[ext_resource path="res://assets/vehicles/bradipo/black/c07_s128_iso_0149.png" type="Texture" id=5]
+[ext_resource path="res://assets/vehicles/bradipo/black/c07_s128_iso_0150.png" type="Texture" id=6]
+[ext_resource path="res://assets/vehicles/bradipo/black/c07_s128_iso_0151.png" type="Texture" id=7]
+[ext_resource path="res://assets/vehicles/bradipo/black/c07_s128_iso_0152.png" type="Texture" id=8]
+[ext_resource path="res://assets/vehicles/bradipo/black/c07_s128_iso_0153.png" type="Texture" id=9]
+[ext_resource path="res://assets/vehicles/bradipo/black/c07_s128_iso_0154.png" type="Texture" id=10]
+[ext_resource path="res://assets/vehicles/bradipo/black/c07_s128_iso_0155.png" type="Texture" id=11]
+[ext_resource path="res://assets/vehicles/bradipo/black/c07_s128_iso_0156.png" type="Texture" id=12]
+[ext_resource path="res://assets/vehicles/bradipo/black/c07_s128_iso_0157.png" type="Texture" id=13]
+[ext_resource path="res://assets/vehicles/bradipo/black/c07_s128_iso_0158.png" type="Texture" id=14]
+[ext_resource path="res://assets/vehicles/bradipo/black/c07_s128_iso_0159.png" type="Texture" id=15]
+[ext_resource path="res://assets/vehicles/bradipo/black/c07_s128_iso_0160.png" type="Texture" id=16]
+[ext_resource path="res://assets/vehicles/basic_sedan/white/c09_s128_iso_0001.png" type="Texture" id=17]
+[ext_resource path="res://assets/vehicles/basic_sedan/white/c09_s128_iso_0002.png" type="Texture" id=18]
+[ext_resource path="res://assets/vehicles/basic_sedan/white/c09_s128_iso_0003.png" type="Texture" id=19]
+[ext_resource path="res://assets/vehicles/basic_sedan/white/c09_s128_iso_0004.png" type="Texture" id=20]
+[ext_resource path="res://assets/vehicles/basic_sedan/white/c09_s128_iso_0005.png" type="Texture" id=21]
+[ext_resource path="res://assets/vehicles/basic_sedan/white/c09_s128_iso_0006.png" type="Texture" id=22]
+[ext_resource path="res://assets/vehicles/basic_sedan/white/c09_s128_iso_0007.png" type="Texture" id=23]
+[ext_resource path="res://assets/vehicles/basic_sedan/white/c09_s128_iso_0008.png" type="Texture" id=24]
+[ext_resource path="res://assets/vehicles/basic_sedan/white/c09_s128_iso_0009.png" type="Texture" id=25]
+[ext_resource path="res://assets/vehicles/basic_sedan/white/c09_s128_iso_0010.png" type="Texture" id=26]
+[ext_resource path="res://assets/vehicles/basic_sedan/white/c09_s128_iso_0011.png" type="Texture" id=27]
+[ext_resource path="res://assets/vehicles/basic_sedan/white/c09_s128_iso_0012.png" type="Texture" id=28]
+[ext_resource path="res://assets/vehicles/basic_sedan/white/c09_s128_iso_0013.png" type="Texture" id=29]
+[ext_resource path="res://assets/vehicles/basic_sedan/white/c09_s128_iso_0014.png" type="Texture" id=30]
+[ext_resource path="res://assets/vehicles/basic_sedan/white/c09_s128_iso_0015.png" type="Texture" id=31]
+[ext_resource path="res://assets/vehicles/basic_sedan/white/c09_s128_iso_0016.png" type="Texture" id=32]
+[ext_resource path="res://assets/vehicles/basic_sedan/yellow/c10_s128_iso_0001.png" type="Texture" id=33]
+[ext_resource path="res://assets/vehicles/basic_sedan/yellow/c10_s128_iso_0002.png" type="Texture" id=34]
+[ext_resource path="res://assets/vehicles/basic_sedan/yellow/c10_s128_iso_0003.png" type="Texture" id=35]
+[ext_resource path="res://assets/vehicles/basic_sedan/yellow/c10_s128_iso_0004.png" type="Texture" id=36]
+[ext_resource path="res://assets/vehicles/basic_sedan/yellow/c10_s128_iso_0005.png" type="Texture" id=37]
+[ext_resource path="res://assets/vehicles/basic_sedan/yellow/c10_s128_iso_0006.png" type="Texture" id=38]
+[ext_resource path="res://assets/vehicles/basic_sedan/yellow/c10_s128_iso_0007.png" type="Texture" id=39]
+[ext_resource path="res://assets/vehicles/basic_sedan/yellow/c10_s128_iso_0008.png" type="Texture" id=40]
+[ext_resource path="res://assets/vehicles/basic_sedan/yellow/c10_s128_iso_0009.png" type="Texture" id=41]
+[ext_resource path="res://assets/vehicles/basic_sedan/yellow/c10_s128_iso_0010.png" type="Texture" id=42]
+[ext_resource path="res://assets/vehicles/basic_sedan/yellow/c10_s128_iso_0011.png" type="Texture" id=43]
+[ext_resource path="res://assets/vehicles/basic_sedan/yellow/c10_s128_iso_0012.png" type="Texture" id=44]
+[ext_resource path="res://assets/vehicles/basic_sedan/yellow/c10_s128_iso_0013.png" type="Texture" id=45]
+[ext_resource path="res://assets/vehicles/basic_sedan/yellow/c10_s128_iso_0014.png" type="Texture" id=46]
+[ext_resource path="res://assets/vehicles/basic_sedan/yellow/c10_s128_iso_0015.png" type="Texture" id=47]
+[ext_resource path="res://assets/vehicles/basic_sedan/yellow/c10_s128_iso_0016.png" type="Texture" id=48]
+[ext_resource path="res://assets/vehicles/cavallo/blue/c02_s128_iso_0208.png" type="Texture" id=49]
+[ext_resource path="res://assets/vehicles/cavallo/blue/c02_s128_iso_0209.png" type="Texture" id=50]
+[ext_resource path="res://assets/vehicles/cavallo/blue/c02_s128_iso_0210.png" type="Texture" id=51]
+[ext_resource path="res://assets/vehicles/cavallo/blue/c02_s128_iso_0211.png" type="Texture" id=52]
+[ext_resource path="res://assets/vehicles/cavallo/blue/c02_s128_iso_0212.png" type="Texture" id=53]
+[ext_resource path="res://assets/vehicles/cavallo/blue/c02_s128_iso_0213.png" type="Texture" id=54]
+[ext_resource path="res://assets/vehicles/cavallo/blue/c02_s128_iso_0214.png" type="Texture" id=55]
+[ext_resource path="res://assets/vehicles/cavallo/blue/c02_s128_iso_0215.png" type="Texture" id=56]
+[ext_resource path="res://assets/vehicles/cavallo/blue/c02_s128_iso_0216.png" type="Texture" id=57]
+[ext_resource path="res://assets/vehicles/cavallo/blue/c02_s128_iso_0217.png" type="Texture" id=58]
+[ext_resource path="res://assets/vehicles/cavallo/blue/c02_s128_iso_0218.png" type="Texture" id=59]
+[ext_resource path="res://assets/vehicles/cavallo/blue/c02_s128_iso_0219.png" type="Texture" id=60]
+[ext_resource path="res://assets/vehicles/cavallo/blue/c02_s128_iso_0220.png" type="Texture" id=61]
+[ext_resource path="res://assets/vehicles/cavallo/blue/c02_s128_iso_0221.png" type="Texture" id=62]
+[ext_resource path="res://assets/vehicles/cavallo/blue/c02_s128_iso_0222.png" type="Texture" id=63]
+[ext_resource path="res://assets/vehicles/cavallo/blue/c02_s128_iso_0223.png" type="Texture" id=64]
+[ext_resource path="res://assets/vehicles/cavallo/grey/c04_s128_iso_0208.png" type="Texture" id=65]
+[ext_resource path="res://assets/vehicles/cavallo/grey/c04_s128_iso_0209.png" type="Texture" id=66]
+[ext_resource path="res://assets/vehicles/cavallo/grey/c04_s128_iso_0210.png" type="Texture" id=67]
+[ext_resource path="res://assets/vehicles/cavallo/grey/c04_s128_iso_0211.png" type="Texture" id=68]
+[ext_resource path="res://assets/vehicles/cavallo/grey/c04_s128_iso_0212.png" type="Texture" id=69]
+[ext_resource path="res://assets/vehicles/cavallo/grey/c04_s128_iso_0213.png" type="Texture" id=70]
+[ext_resource path="res://assets/vehicles/cavallo/grey/c04_s128_iso_0214.png" type="Texture" id=71]
+[ext_resource path="res://assets/vehicles/cavallo/grey/c04_s128_iso_0215.png" type="Texture" id=72]
+[ext_resource path="res://assets/vehicles/cavallo/grey/c04_s128_iso_0216.png" type="Texture" id=73]
+[ext_resource path="res://assets/vehicles/cavallo/grey/c04_s128_iso_0217.png" type="Texture" id=74]
+[ext_resource path="res://assets/vehicles/cavallo/grey/c04_s128_iso_0218.png" type="Texture" id=75]
+[ext_resource path="res://assets/vehicles/cavallo/grey/c04_s128_iso_0219.png" type="Texture" id=76]
+[ext_resource path="res://assets/vehicles/cavallo/grey/c04_s128_iso_0220.png" type="Texture" id=77]
+[ext_resource path="res://assets/vehicles/cavallo/grey/c04_s128_iso_0221.png" type="Texture" id=78]
+[ext_resource path="res://assets/vehicles/cavallo/grey/c04_s128_iso_0222.png" type="Texture" id=79]
+[ext_resource path="res://assets/vehicles/cavallo/grey/c04_s128_iso_0223.png" type="Texture" id=80]
+[ext_resource path="res://assets/vehicles/cavallo/black/c07_s128_iso_0208.png" type="Texture" id=81]
+[ext_resource path="res://assets/vehicles/cavallo/black/c07_s128_iso_0209.png" type="Texture" id=82]
+[ext_resource path="res://assets/vehicles/cavallo/black/c07_s128_iso_0210.png" type="Texture" id=83]
+[ext_resource path="res://assets/vehicles/cavallo/black/c07_s128_iso_0211.png" type="Texture" id=84]
+[ext_resource path="res://assets/vehicles/cavallo/black/c07_s128_iso_0212.png" type="Texture" id=85]
+[ext_resource path="res://assets/vehicles/cavallo/black/c07_s128_iso_0213.png" type="Texture" id=86]
+[ext_resource path="res://assets/vehicles/cavallo/black/c07_s128_iso_0214.png" type="Texture" id=87]
+[ext_resource path="res://assets/vehicles/cavallo/black/c07_s128_iso_0215.png" type="Texture" id=88]
+[ext_resource path="res://assets/vehicles/cavallo/black/c07_s128_iso_0216.png" type="Texture" id=89]
+[ext_resource path="res://assets/vehicles/cavallo/black/c07_s128_iso_0217.png" type="Texture" id=90]
+[ext_resource path="res://assets/vehicles/cavallo/black/c07_s128_iso_0218.png" type="Texture" id=91]
+[ext_resource path="res://assets/vehicles/cavallo/black/c07_s128_iso_0219.png" type="Texture" id=92]
+[ext_resource path="res://assets/vehicles/cavallo/black/c07_s128_iso_0220.png" type="Texture" id=93]
+[ext_resource path="res://assets/vehicles/cavallo/black/c07_s128_iso_0221.png" type="Texture" id=94]
+[ext_resource path="res://assets/vehicles/cavallo/black/c07_s128_iso_0222.png" type="Texture" id=95]
+[ext_resource path="res://assets/vehicles/cavallo/black/c07_s128_iso_0223.png" type="Texture" id=96]
+[ext_resource path="res://assets/vehicles/rikedykart/white/c09_s128_iso_0288.png" type="Texture" id=97]
+[ext_resource path="res://assets/vehicles/rikedykart/white/c09_s128_iso_0289.png" type="Texture" id=98]
+[ext_resource path="res://assets/vehicles/rikedykart/white/c09_s128_iso_0290.png" type="Texture" id=99]
+[ext_resource path="res://assets/vehicles/rikedykart/white/c09_s128_iso_0291.png" type="Texture" id=100]
+[ext_resource path="res://assets/vehicles/rikedykart/white/c09_s128_iso_0292.png" type="Texture" id=101]
+[ext_resource path="res://assets/vehicles/rikedykart/white/c09_s128_iso_0293.png" type="Texture" id=102]
+[ext_resource path="res://assets/vehicles/rikedykart/white/c09_s128_iso_0294.png" type="Texture" id=103]
+[ext_resource path="res://assets/vehicles/rikedykart/white/c09_s128_iso_0295.png" type="Texture" id=104]
+[ext_resource path="res://assets/vehicles/rikedykart/white/c09_s128_iso_0296.png" type="Texture" id=105]
+[ext_resource path="res://assets/vehicles/rikedykart/white/c09_s128_iso_0297.png" type="Texture" id=106]
+[ext_resource path="res://assets/vehicles/rikedykart/white/c09_s128_iso_0298.png" type="Texture" id=107]
+[ext_resource path="res://assets/vehicles/rikedykart/white/c09_s128_iso_0299.png" type="Texture" id=108]
+[ext_resource path="res://assets/vehicles/rikedykart/white/c09_s128_iso_0300.png" type="Texture" id=109]
+[ext_resource path="res://assets/vehicles/rikedykart/white/c09_s128_iso_0301.png" type="Texture" id=110]
+[ext_resource path="res://assets/vehicles/rikedykart/white/c09_s128_iso_0302.png" type="Texture" id=111]
+[ext_resource path="res://assets/vehicles/rikedykart/white/c09_s128_iso_0303.png" type="Texture" id=112]
+[ext_resource path="res://assets/vehicles/boat/layers/0.png" type="Texture" id=113]
+[ext_resource path="res://assets/vehicles/boat/layers/1.png" type="Texture" id=114]
+[ext_resource path="res://assets/vehicles/boat/layers/2.png" type="Texture" id=115]
+[ext_resource path="res://assets/vehicles/boat/layers/3.png" type="Texture" id=116]
+[ext_resource path="res://assets/vehicles/boat/layers/4.png" type="Texture" id=117]
+[ext_resource path="res://assets/vehicles/boat/layers/5.png" type="Texture" id=118]
+[ext_resource path="res://assets/vehicles/boat/layers/6.png" type="Texture" id=119]
+[ext_resource path="res://assets/vehicles/boat/layers/7.png" type="Texture" id=120]
+[ext_resource path="res://assets/vehicles/boat/layers/8.png" type="Texture" id=121]
+[ext_resource path="res://assets/vehicles/boat/layers/9.png" type="Texture" id=122]
+[ext_resource path="res://assets/vehicles/boat/layers/10.png" type="Texture" id=123]
+[ext_resource path="res://assets/vehicles/boat/layers/11.png" type="Texture" id=124]
+[ext_resource path="res://assets/vehicles/boat/layers/12.png" type="Texture" id=125]
+[ext_resource path="res://assets/vehicles/boat/layers/13.png" type="Texture" id=126]
+[ext_resource path="res://assets/vehicles/boat/layers/14.png" type="Texture" id=127]
+[ext_resource path="res://assets/vehicles/boat/layers/15.png" type="Texture" id=128]
+
+[sub_resource type="SpriteFrames" id=1]
+
+animations = [ {
+"frames": [ ExtResource( 1 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ) ],
+"loop": true,
+"name": "bradipo_nero",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 26 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 29 ), ExtResource( 30 ), ExtResource( 31 ), ExtResource( 32 ) ],
+"loop": true,
+"name": "sedan_white",
+"speed": 6.0
+}, {
+"frames": [ ExtResource( 33 ), ExtResource( 34 ), ExtResource( 35 ), ExtResource( 36 ), ExtResource( 37 ), ExtResource( 38 ), ExtResource( 39 ), ExtResource( 40 ), ExtResource( 41 ), ExtResource( 42 ), ExtResource( 43 ), ExtResource( 44 ), ExtResource( 45 ), ExtResource( 46 ), ExtResource( 47 ), ExtResource( 48 ) ],
+"loop": true,
+"name": "sedan_yellow",
+"speed": 6.0
+}, {
+"frames": [ ExtResource( 49 ), ExtResource( 50 ), ExtResource( 51 ), ExtResource( 52 ), ExtResource( 53 ), ExtResource( 54 ), ExtResource( 55 ), ExtResource( 56 ), ExtResource( 57 ), ExtResource( 58 ), ExtResource( 59 ), ExtResource( 60 ), ExtResource( 61 ), ExtResource( 62 ), ExtResource( 63 ), ExtResource( 64 ) ],
+"loop": true,
+"name": "cavallo_blue",
+"speed": 9.0
+}, {
+"frames": [ ExtResource( 65 ), ExtResource( 66 ), ExtResource( 67 ), ExtResource( 68 ), ExtResource( 69 ), ExtResource( 70 ), ExtResource( 71 ), ExtResource( 72 ), ExtResource( 73 ), ExtResource( 74 ), ExtResource( 75 ), ExtResource( 76 ), ExtResource( 77 ), ExtResource( 78 ), ExtResource( 79 ), ExtResource( 80 ) ],
+"loop": true,
+"name": "cavallo_grey",
+"speed": 9.0
+}, {
+"frames": [ ExtResource( 81 ), ExtResource( 82 ), ExtResource( 83 ), ExtResource( 84 ), ExtResource( 85 ), ExtResource( 86 ), ExtResource( 87 ), ExtResource( 88 ), ExtResource( 89 ), ExtResource( 90 ), ExtResource( 91 ), ExtResource( 92 ), ExtResource( 93 ), ExtResource( 94 ), ExtResource( 95 ), ExtResource( 96 ) ],
+"loop": true,
+"name": "cavallo_black",
+"speed": 9.0
+}, {
+"frames": [  ],
+"loop": true,
+"name": "none",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 97 ), ExtResource( 98 ), ExtResource( 99 ), ExtResource( 100 ), ExtResource( 101 ), ExtResource( 102 ), ExtResource( 103 ), ExtResource( 104 ), ExtResource( 105 ), ExtResource( 106 ), ExtResource( 107 ), ExtResource( 108 ), ExtResource( 109 ), ExtResource( 110 ), ExtResource( 111 ), ExtResource( 112 ) ],
+"loop": true,
+"name": "rk_rainbow",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 113 ), ExtResource( 114 ), ExtResource( 115 ), ExtResource( 116 ), ExtResource( 117 ), ExtResource( 118 ), ExtResource( 119 ), ExtResource( 120 ), ExtResource( 121 ), ExtResource( 122 ), ExtResource( 123 ), ExtResource( 124 ), ExtResource( 125 ), ExtResource( 126 ), ExtResource( 127 ), ExtResource( 128 ) ],
+"loop": true,
+"name": "boat",
+"speed": 5.0
+} ]
+
+[node name="vehicle_animations" type="AnimatedSprite"]
+
+frames = SubResource( 1 )
+animation = "none"
+playing = true
+
+

@@ -156,7 +156,6 @@ lines_skipped = 0
 max_lines_visible = -1
 
 [node name="player_buttons" type="VBoxContainer" parent="player_select"]
-editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -222,8 +221,6 @@ max_lines_visible = -1
 _sections_unfolded = [ "custom_colors", "custom_constants", "custom_fonts", "custom_styles" ]
 
 [node name="pirate" type="TextureButton" parent="player_select/player_buttons"]
-editor/display_folded = true
-visible = false
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -265,7 +262,7 @@ size_flags_vertical = 4
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-text = "Ninja"
+text = "Pirate"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
@@ -495,6 +492,7 @@ dialog_hide_on_ok = true
 _sections_unfolded = [ "Dialog" ]
 
 [node name="settings" type="Panel" parent="."]
+editor/display_folded = true
 visible = false
 anchor_left = 0.0
 anchor_top = 0.0

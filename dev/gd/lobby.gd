@@ -71,7 +71,7 @@ func _on_game_ended():
 	show()
 	get_node("connect").show()
 	get_node("players").hide()
-	get_node("vehicle_select").hide()
+	#get_node("vehicle_select").hide()
 	get_node("connect/host").disabled = false
 	get_node("connect/join").disabled
 
@@ -118,9 +118,17 @@ func _on_player_button_pressed():
 
 func _on_ninja_pressed():
 	gamestate.my_player_info["scene_file"] = "res://assets/fighters/ninja/ninja.tscn"
-	print("NINJA")
+
+func _on_pirate_pressed():
+	gamestate.my_player_info["scene_file"] = "res//assets/fighter/pirate/pirate.tscn"
 
 func _on_ninja_toggled(pressed):
+	if pressed:
+		$player_select/ready.disabled = false
+	else:
+		$player_select/ready.disabled = true
+
+func _on_pirate_toggled(pressed):
 	if pressed:
 		$player_select/ready.disabled = false
 	else:
@@ -133,6 +141,5 @@ func _on_ready_pressed():
 	$players.show()
 	if get_tree().get_network_unique_id() == 1:
 		$settings.show()
-	refresh_lobby()
-
-
+	#refresh_lobby()
+	

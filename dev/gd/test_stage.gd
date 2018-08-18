@@ -14,15 +14,52 @@ func _ready():
 	$countdown/timer.wait_time = 1.5
 	$countdown/timer.one_shot = true
 	$countdown/timer.start()
-	pass
+	# Connect on screen controls
+	$on_screen_controls/button.connect("toggled", self, "_toggle_on_screen_controls")
+	$on_screen_controls/control_buttons/right.connect("button_down", self, "_on_screen_right")
+	$on_screen_controls/control_buttons/right.connect("button_up", self, "_on_release_screen_right")
+	$on_screen_controls/control_buttons/left.connect("button_down", self, "_on_screen_left")
+	$on_screen_controls/control_buttons/left.connect("button_up", self, "_on_release_screen_left")
+	$on_screen_controls/control_buttons/jump.connect("button_down", self, "_on_screen_jump")
+	$on_screen_controls/control_buttons/jump.connect("button_up", self, "_on_release_screen_jump")
+	$on_screen_controls/control_buttons/attack.connect("button_down", self, "_on_screen_attack")
+	$on_screen_controls/control_buttons/attack.connect("button_up", self, "_on_release_screen_attack")
+
+func _toggle_on_screen_controls(pressed):
+	if pressed:
+		$on_screen_controls/control_buttons.show()
+	else:
+		$on_screen_controls/control_buttons.hide()
+
+func _on_screen_right():
+	Input.action_press("move_right")
+func _on_release_screen_right():
+	Input.action_release("move_right")
+
+func _on_screen_left():
+	Input.action_press("move_left")
+func _on_release_screen_left():
+	Input.action_release("move_left")
+
+func _on_screen_jump():
+	Input.action_press("jump")
+func _on_release_screen_jump():
+	Input.action_release("jump")
+
+func _on_screen_attack():
+	Input.action_press("attack")
+func _on_release_screen_attack():
+	Input.action_release("attack")
 
 func _on_countdown_finished():
 	$countdown/label.text = "FIGHT"
-	if gamestate.my_player.active:
+	if gamestate.match_start:
 		$countdown.hide()
+		$countdown/timer.stop()
 	for player in $players.get_children():
 		player.active = true
-	$countdown/timer.wait_time = 0.5
+		gamestate.match_start = true
+	$countdown/timer.wait_time = 0.2
 	$countdown/timer.start()
 
 func _process(delta):

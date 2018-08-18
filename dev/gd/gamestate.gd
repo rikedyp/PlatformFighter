@@ -9,6 +9,8 @@ const max_peers = 2
 # Match # rounds
 var max_rounds = 3
 
+var match_start = false
+
 # Details for my player
 var my_player
 var my_player_info = {
@@ -129,7 +131,7 @@ remote func post_start_game():
 remote func ready_to_start(id):
 	assert(get_tree().is_network_server())
 	for player in players:
-		rpc_id(player, "post_start_game")
+		rpc_id(int(player), "post_start_game")
 	post_start_game()
 
 func host_game(new_player_name):
@@ -235,5 +237,15 @@ sync func set_max_rounds(rounds):
 remote func update_score(id, score):
 	players[id]["score"] = score
 
-func respawn_player():
+sync func respawn_player():
+	var respawn_player = load(my_player_info["scene_file"]).instance()
+	#print(respawn_player)
+	#print(get_parent().name)
+	#print(get_node("/root/test_stage").name)
+	respawn_player.set_name(str(get_tree().get_network_unique_id())) # doesn't work after 2 respawns?
+	respawn_player.set_global_position(get_node("/root/test_stage/spawn_points/0").get_global_position())#.x, get_node("/root/test_stage/spawn_points/0").y)
+	get_node("/root/test_stage").add_child(respawn_player)
+	respawn_player.active = true
+	#queue_free()
+	#World.add_child(respawn_player)
 	pass

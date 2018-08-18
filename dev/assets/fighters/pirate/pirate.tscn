@@ -1,0 +1,113 @@
+[gd_scene load_steps=26 format=2]
+
+[ext_resource path="res://gd/player.gd" type="Script" id=1]
+[ext_resource path="res://assets/fighters/pirate/5x/idle_0.png" type="Texture" id=2]
+[ext_resource path="res://assets/fighters/pirate/5x/idle_1.png" type="Texture" id=3]
+[ext_resource path="res://assets/fighters/pirate/5x/idle_2.png" type="Texture" id=4]
+[ext_resource path="res://assets/fighters/pirate/5x/idle_3.png" type="Texture" id=5]
+[ext_resource path="res://assets/fighters/pirate/5x/run_0.png" type="Texture" id=6]
+[ext_resource path="res://assets/fighters/pirate/5x/run_1.png" type="Texture" id=7]
+[ext_resource path="res://assets/fighters/pirate/5x/run_2.png" type="Texture" id=8]
+[ext_resource path="res://assets/fighters/pirate/5x/run_3.png" type="Texture" id=9]
+[ext_resource path="res://assets/fighters/pirate/5x/run_4.png" type="Texture" id=10]
+[ext_resource path="res://assets/fighters/pirate/5x/run_5.png" type="Texture" id=11]
+[ext_resource path="res://assets/fighters/pirate/5x/jump_0.png" type="Texture" id=12]
+[ext_resource path="res://assets/fighters/pirate/5x/jump_1.png" type="Texture" id=13]
+[ext_resource path="res://assets/fighters/pirate/5x/jump_2.png" type="Texture" id=14]
+[ext_resource path="res://assets/fighters/pirate/5x/jump_3.png" type="Texture" id=15]
+[ext_resource path="res://assets/fighters/pirate/5x/jump_4.png" type="Texture" id=16]
+[ext_resource path="res://assets/fighters/pirate/5x/jump_5.png" type="Texture" id=17]
+[ext_resource path="res://assets/fighters/pirate/5x/attack_0.png" type="Texture" id=18]
+[ext_resource path="res://assets/fighters/pirate/5x/attack_1.png" type="Texture" id=19]
+[ext_resource path="res://assets/fighters/pirate/5x/attack_2.png" type="Texture" id=20]
+[ext_resource path="res://assets/fighters/pirate/5x/attack_3.png" type="Texture" id=21]
+[ext_resource path="res://assets/fighters/pirate/5x/attack_4.png" type="Texture" id=22]
+
+[sub_resource type="RectangleShape2D" id=2]
+
+custom_solver_bias = 0.0
+extents = Vector2( 22.6037, 33.4284 )
+
+[sub_resource type="SpriteFrames" id=1]
+
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ) ],
+"loop": true,
+"name": "run",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ) ],
+"loop": true,
+"name": "jump",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ) ],
+"loop": true,
+"name": "attack",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=3]
+
+custom_solver_bias = 0.0
+extents = Vector2( 25.1247, 17.6722 )
+
+[node name="pirate" type="KinematicBody2D"]
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+collision/safe_margin = 0.08
+motion/sync_to_physics = false
+script = ExtResource( 1 )
+_sections_unfolded = [ "Script" ]
+jump_power = 1000
+move_speed = 400
+gravity = 50
+active = false
+
+[node name="hit_box" type="CollisionShape2D" parent="."]
+position = Vector2( -20.7981, 16.3864 )
+shape = SubResource( 2 )
+
+[node name="animated_sprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 1 )
+animation = "idle"
+_sections_unfolded = [ "frames" ]
+
+[node name="label" type="Label" parent="."]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -43.0
+margin_top = -79.0
+margin_right = -3.0
+margin_bottom = -65.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="head" type="Area2D" parent="."]
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="hit_box" type="CollisionShape2D" parent="head"]
+position = Vector2( -21.4284, -13.2352 )
+shape = SubResource( 3 )
+

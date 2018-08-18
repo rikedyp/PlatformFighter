@@ -5,6 +5,8 @@ export (int) var jump_power = 1000
 export (int) var move_speed = 400
 export (int) var gravity = 50
 export (bool) var active = false
+var max_lives
+var spawn_pos
 var anim
 var dir = 1
 var jumping = false
@@ -36,12 +38,12 @@ func _ready():
 	# Called every time the node is added to the scene.
 	# Initialization here
 	$head.connect("body_entered", self, "_on_head_entered")
-	$body.connect("body_entered", self, "_on_body_entered")
+	#$body.connect("body_entered", self, "_on_body_entered")
 	anim = $animated_sprite
 	anim.connect("animation_finished", self, "_on_animation_finished")
 	set_physics_process(true)
 	$label.text = get_name()
-	
+	gamestate.players["ninja"] = [1234, "ninja"]
 
 func set_player_name(new_name):
 	$label.set_text(new_name)
@@ -55,6 +57,10 @@ func _physics_process(delta):
 		handle_input(delta)
 	handle_collisions()
 	rpc("set_pos_and_motion", position, velocity, dir, attacking, jumping, anim.get_animation(), anim.playing)
+	if Input.is_action_just_pressed("dodge"):
+		rpc("get_killed")
+	if Input.is_action_just_pressed("ui_select"):
+		print("I'm ALIVE!")
 
 func handle_input(delta):
 	var move_left = Input.is_action_pressed("move_left")
@@ -95,6 +101,7 @@ func handle_input(delta):
 	elif jumping:
 		velocity.x = 0
 	if attack:
+		create_attack_box()
 		attack_time = 0.0
 		anim.set_animation("attack")
 		anim.play()
@@ -103,6 +110,7 @@ func handle_input(delta):
 		attack_time += delta
 		#print("attacking")
 		if attack_time > 0.3 and attack_time < 0.4:
+			# Create attack box and connect to _on_attack_box_enter function
 			#print(attack_time)
 			if dir == 1:
 				velocity.x = move_speed
@@ -127,15 +135,16 @@ func handle_collisions():
 #			for player in gamestate.players:
 #				print(player)
 			var col = get_slide_collision(i).collider
+			#print(col.name)
 			if col.name == "floor":
 				#print("on floor")
 				jump_flag = 2
 				jumping = false
 				on_floor = true
 				velocity.y = 0
-			if int(col.name) in gamestate.players:
+			if int(col.name) in gamestate.players:# or col.name == "ninja":
 				#print(normal)
-				#print("got em")
+				print("got em")
 				jump_flag = 1
 				jumping = true
 				on_floor = false
@@ -143,8 +152,7 @@ func handle_collisions():
 					velocity.y -= jump_power
 				print("collision")
 				print(col.name)
-#			if get_slide_collision(i).collider.name == "player":
-#				get_killed()
+				col.rpc("get_killed")
 #	if col:
 #		#print(col.collider.name)
 #		if col.collider.name == "floor" and velocity.y > 0:
@@ -159,30 +167,46 @@ func handle_collisions():
 
 func _on_animation_finished():
 	if anim.animation == "attack":
+		print("end attack")
 		anim.stop()
 		attacking = false
+		#print($attack_box.name)
+		#remove_child($attack_box)
+		$attack_box.queue_free()
 
 func _on_head_entered(body):
 	print("head enter")
-	if int(body.name) in gamestate.players:# and body.name != get_name():
-		print(name)
+	if int(body.name) in gamestate.players and body.name != get_name():# or body.name == "1":
 		print(body.name)
 		print(body.attacking)
 		print(body.jumping)
 #		if body.jumping:
-#			get_killed()
+#			rpc("get_killed")
 
-func _on_body_entered(body):
-	print("body enter")
-	if int(body.name) in gamestate.players:# and body.name != get_name():
-		print(name)
-		print(body.name)
-		print(body.attacking)
-		print(body.jumping)
-	
+func create_attack_box():
+	var attack_box = Area2D.new()
+	var hit_box = CollisionShape2D.new()
+	var hit_shape = CircleShape2D.new()
+	hit_shape.radius = 5
+	hit_box.shape = hit_shape
+	attack_box.set_name("attack_box")
+	attack_box.add_child(hit_box)
+	attack_box.connect("body_entered", self, "_on_attack_box_entered")
+	add_child(attack_box)
+	attack_box.position.x += 10
 
-func get_killed():
+func _on_attack_box_entered(body):
+	print("ATTACK")
+	print(body.name)
+	if int(body.name) in gamestate.players:# or body.name == "ninja":
+		body.rpc("get_killed")
+
+sync func get_killed():
+	gamestate.rpc("respawn_player")
 	queue_free()
 	# TODO: Respawn
+
+remote func player_killed():
+	pass
 
 

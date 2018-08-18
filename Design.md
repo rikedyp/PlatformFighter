@@ -25,6 +25,12 @@ CONTENTS
 		- Text Input host IP address
 - Simple gravity
 - Player stabs or shoots
+	- Jump on head - kill
+	- Shoot body - kill
+	- Stab body - kill
+- Respawn
+	- Player assigned spawn point on match start
+	- [Optional] players respawn at random spawn points
 
 ### Multiplayer methods
 - Based on the multiplayer bomber in Godot demo projects
@@ -65,6 +71,7 @@ CONTENTS
 	- Toggle friendly fire
 - Dodge 
 	- Super dodge
+- Shoot head - hat off
 	
 ### Fighters
 - Ninja

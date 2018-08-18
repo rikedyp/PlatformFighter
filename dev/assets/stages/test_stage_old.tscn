@@ -1,0 +1,419 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://gd/test_stage.gd" type="Script" id=1]
+[ext_resource path="res://assets/stages/yellow_button02.png" type="Texture" id=2]
+[ext_resource path="res://assets/ui/kenney_ui/PNG/grey_button14.png" type="Texture" id=3]
+[ext_resource path="res://assets/fonts/montserrat.otf" type="DynamicFontData" id=4]
+[ext_resource path="res://assets/ui/kenney_ui/PNG/grey_button12.png" type="Texture" id=5]
+[ext_resource path="res://assets/ui/kenney_ui/PNG/grey_button13.png" type="Texture" id=6]
+[ext_resource path="res://assets/fonts/HUD.tres" type="DynamicFont" id=7]
+
+[sub_resource type="PhysicsMaterial" id=1]
+
+friction = 1.0
+rough = false
+bounce = 0.0
+absorbent = false
+
+[sub_resource type="RectangleShape2D" id=2]
+
+custom_solver_bias = 0.0
+extents = Vector2( 106.132, 10 )
+
+[sub_resource type="RectangleShape2D" id=3]
+
+custom_solver_bias = 0.0
+extents = Vector2( 537.231, 45.4762 )
+
+[sub_resource type="RectangleShape2D" id=4]
+
+custom_solver_bias = 0.0
+extents = Vector2( 214.05, 60.1386 )
+
+[sub_resource type="DynamicFont" id=5]
+
+size = 30
+outline_size = 0
+outline_color = Color( 1, 1, 1, 1 )
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 4 )
+_sections_unfolded = [ "Font", "Settings" ]
+
+[node name="test_stage" type="Node2D"]
+script = ExtResource( 1 )
+zoom_factor = 0.2
+
+[node name="yellow_button02" type="Sprite" parent="."]
+position = Vector2( 281.948, 263.463 )
+scale = Vector2( 1.11154, 0.377915 )
+texture = ExtResource( 2 )
+
+[node name="yellow_button3" type="Sprite" parent="."]
+position = Vector2( 713.297, 262.571 )
+scale = Vector2( 1.11154, 0.377915 )
+texture = ExtResource( 2 )
+
+[node name="yellow_button02 2" type="Sprite" parent="."]
+position = Vector2( 507.05, 484.606 )
+scale = Vector2( 5.65629, 2.25448 )
+texture = ExtResource( 2 )
+
+[node name="floor" type="StaticBody2D" parent="."]
+editor/display_folded = true
+input_pickable = false
+collision_layer = 1
+collision_mask = 2
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+physics_material_override = SubResource( 1 )
+
+[node name="hit_box" type="CollisionShape2D" parent="floor"]
+position = Vector2( 281.873, 263.784 )
+shape = SubResource( 2 )
+
+[node name="hit_box2" type="CollisionShape2D" parent="floor"]
+position = Vector2( 712.972, 262.277 )
+shape = SubResource( 2 )
+
+[node name="hit_box3" type="CollisionShape2D" parent="floor"]
+position = Vector2( 507.973, 474.812 )
+shape = SubResource( 3 )
+
+[node name="hit_box4" type="CollisionShape2D" parent="floor"]
+position = Vector2( 1249.64, 377.164 )
+shape = SubResource( 4 )
+
+[node name="hit_box5" type="CollisionShape2D" parent="floor"]
+position = Vector2( -231.751, 372.62 )
+shape = SubResource( 4 )
+
+[node name="players" type="Node2D" parent="."]
+
+[node name="spawn_points" type="Node2D" parent="."]
+editor/display_folded = true
+
+[node name="0" type="Position2D" parent="spawn_points"]
+position = Vector2( 274.507, 94.3462 )
+
+[node name="1" type="Position2D" parent="spawn_points"]
+position = Vector2( 725.146, 106.934 )
+
+[node name="instructions" type="Label" parent="."]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 40.0
+margin_bottom = 14.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 0
+text = "Move - WASD
+Attack - Slash [/]
+Dodge - Dot [.]"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="camera" type="Camera2D" parent="."]
+position = Vector2( 504.901, 278.951 )
+anchor_mode = 1
+rotating = false
+current = true
+zoom = Vector2( 1, 1 )
+limit_left = -10000000
+limit_top = -10000000
+limit_right = 10000000
+limit_bottom = 10000000
+limit_smoothed = false
+drag_margin_h_enabled = true
+drag_margin_v_enabled = true
+smoothing_enabled = false
+smoothing_speed = 5.0
+offset_v = 0.0
+offset_h = 0.0
+drag_margin_left = 0.2
+drag_margin_top = 0.2
+drag_margin_right = 0.2
+drag_margin_bottom = 0.2
+editor_draw_screen = true
+editor_draw_limits = false
+editor_draw_drag_margin = false
+
+[node name="countdown" type="Sprite" parent="."]
+editor/display_folded = true
+position = Vector2( 495.664, 109.109 )
+texture = ExtResource( 3 )
+
+[node name="label" type="Label" parent="countdown"]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -45.0
+margin_top = -22.0
+margin_right = 52.0
+margin_bottom = 16.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Ready"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Custom Fonts", "custom_fonts/font" ]
+
+[node name="timer" type="Timer" parent="countdown"]
+process_mode = 1
+wait_time = 1.0
+one_shot = false
+autostart = false
+
+[node name="on_screen_controls" type="Control" parent="."]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 40.0
+margin_bottom = 40.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+
+[node name="button" type="Button" parent="on_screen_controls"]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 57.0
+margin_right = 12.0
+margin_bottom = 77.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = true
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "On screen controls"
+flat = false
+align = 1
+
+[node name="control_buttons" type="Node2D" parent="on_screen_controls"]
+editor/display_folded = true
+visible = false
+
+[node name="left" type="TextureButton" parent="on_screen_controls/control_buttons"]
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 36.0
+margin_top = 349.0
+margin_right = 85.0
+margin_bottom = 398.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+action_mode = 0
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 5 )
+texture_pressed = ExtResource( 6 )
+_sections_unfolded = [ "Textures" ]
+
+[node name="label" type="Label" parent="on_screen_controls/control_buttons/left"]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 8.0
+margin_top = 6.0
+margin_right = 48.0
+margin_bottom = 38.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 7 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "<--"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Custom Colors", "Custom Fonts" ]
+
+[node name="right" type="TextureButton" parent="on_screen_controls/control_buttons"]
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 148.0
+margin_top = 349.0
+margin_right = 197.0
+margin_bottom = 398.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+action_mode = 0
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 5 )
+texture_pressed = ExtResource( 6 )
+_sections_unfolded = [ "Textures" ]
+
+[node name="label" type="Label" parent="on_screen_controls/control_buttons/right"]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 8.0
+margin_top = 6.0
+margin_right = 48.0
+margin_bottom = 38.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 7 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "-->"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Custom Colors", "Custom Fonts" ]
+
+[node name="jump" type="TextureButton" parent="on_screen_controls/control_buttons"]
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 782.0
+margin_top = 347.0
+margin_right = 831.0
+margin_bottom = 396.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+action_mode = 0
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 5 )
+texture_pressed = ExtResource( 6 )
+_sections_unfolded = [ "Textures" ]
+
+[node name="label" type="Label" parent="on_screen_controls/control_buttons/jump"]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 17.0
+margin_top = 7.0
+margin_right = 57.0
+margin_bottom = 39.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 7 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "J"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Custom Colors", "Custom Fonts" ]
+
+[node name="attack" type="TextureButton" parent="on_screen_controls/control_buttons"]
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 899.0
+margin_top = 347.0
+margin_right = 948.0
+margin_bottom = 396.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+action_mode = 0
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 5 )
+texture_pressed = ExtResource( 6 )
+_sections_unfolded = [ "Textures" ]
+
+[node name="label" type="Label" parent="on_screen_controls/control_buttons/attack"]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 15.0
+margin_top = 7.0
+margin_right = 55.0
+margin_bottom = 39.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 7 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "A"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Custom Colors", "Custom Fonts" ]
+

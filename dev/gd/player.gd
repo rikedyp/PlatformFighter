@@ -58,7 +58,7 @@ func _physics_process(delta):
 	handle_collisions()
 	rpc("set_pos_and_motion", position, velocity, dir, attacking, jumping, anim.get_animation(), anim.playing)
 	if Input.is_action_just_pressed("dodge"):
-		rpc("get_killed")
+		get_killed()
 	if Input.is_action_just_pressed("ui_select"):
 		print("I'm ALIVE!")
 
@@ -87,6 +87,8 @@ func handle_input(delta):
 		if not jumping:
 			anim.set_animation("run")
 		anim.flip_h = true
+		$hit_box.position.x = 20
+		$head.position.x = 30
 	elif move_right and not attacking:
 		dir = 1
 		velocity.x = move_speed
@@ -94,6 +96,8 @@ func handle_input(delta):
 			anim.set_animation("run")
 			anim.play()
 		anim.flip_h = false
+		$hit_box.position.x = -15
+		$head.position.x = 0
 	elif not jumping and not attacking:
 		anim.set_animation("idle")
 		anim.play()
@@ -180,6 +184,8 @@ func _on_head_entered(body):
 		print(body.name)
 		print(body.attacking)
 		print(body.jumping)
+		if body.jumping:
+			get_killed()
 #		if body.jumping:
 #			rpc("get_killed")
 
@@ -193,20 +199,25 @@ func create_attack_box():
 	attack_box.add_child(hit_box)
 	attack_box.connect("body_entered", self, "_on_attack_box_entered")
 	add_child(attack_box)
-	attack_box.position.x += 10
+	if dir == 1:
+		attack_box.position.x += 20
+	else:
+		attack_box.position.x -= 20
 
 func _on_attack_box_entered(body):
 	print("ATTACK")
 	print(body.name)
-	if int(body.name) in gamestate.players:# or body.name == "ninja":
-		body.rpc("get_killed")
+	if int(body.name) in gamestate.players or body.name == "ninja":
+		body.get_killed()#body.rpc("get_killed")
+		#attacking = false
+		#jumping = false
+		#position.x -= 20
 
-sync func get_killed():
-	gamestate.rpc("respawn_player")
-	queue_free()
+func get_killed():
+	#print(name)
+	gamestate.rpc("respawn_player", name)
+	#queue_free()
 	# TODO: Respawn
 
-remote func player_killed():
-	pass
 
 

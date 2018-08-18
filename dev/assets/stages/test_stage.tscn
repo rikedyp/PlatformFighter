@@ -1,131 +1,86 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://gd/test_stage.gd" type="Script" id=1]
-[ext_resource path="res://assets/stages/yellow_button02.png" type="Texture" id=2]
-[ext_resource path="res://assets/ui/kenney_ui/PNG/grey_button14.png" type="Texture" id=3]
-[ext_resource path="res://assets/fonts/montserrat.otf" type="DynamicFontData" id=4]
-[ext_resource path="res://assets/ui/kenney_ui/PNG/grey_button12.png" type="Texture" id=5]
-[ext_resource path="res://assets/ui/kenney_ui/PNG/grey_button13.png" type="Texture" id=6]
-[ext_resource path="res://assets/fonts/HUD.tres" type="DynamicFont" id=7]
+[ext_resource path="res://assets/ui/kenney_ui/PNG/blue_button13.png" type="Texture" id=2]
+[ext_resource path="res://assets/fonts/HUD.tres" type="DynamicFont" id=3]
+[ext_resource path="res://assets/ui/kenney_ui/PNG/grey_button12.png" type="Texture" id=4]
+[ext_resource path="res://assets/ui/kenney_ui/PNG/grey_button13.png" type="Texture" id=5]
+[ext_resource path="res://assets/ui/kenney_ui/PNG/blue_button05.png" type="Texture" id=6]
 
-[sub_resource type="PhysicsMaterial" id=1]
+[sub_resource type="RectangleShape2D" id=1]
 
-friction = 1.0
-rough = false
-bounce = 0.0
-absorbent = false
+custom_solver_bias = 0.0
+extents = Vector2( 162.345, 10 )
 
 [sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
-extents = Vector2( 106.132, 10 )
+extents = Vector2( 548.224, 10 )
 
 [sub_resource type="RectangleShape2D" id=3]
 
 custom_solver_bias = 0.0
-extents = Vector2( 537.231, 45.4762 )
+extents = Vector2( 10, 70.3477 )
 
-[sub_resource type="RectangleShape2D" id=4]
+[node name="test_stage" type="Node2D" index="0"]
 
-custom_solver_bias = 0.0
-extents = Vector2( 214.05, 60.1386 )
-
-[sub_resource type="DynamicFont" id=5]
-
-size = 30
-outline_size = 0
-outline_color = Color( 1, 1, 1, 1 )
-use_mipmaps = false
-use_filter = false
-font_data = ExtResource( 4 )
-_sections_unfolded = [ "Font", "Settings" ]
-
-[node name="test_stage" type="Node2D"]
 script = ExtResource( 1 )
-zoom_factor = 0.2
+zoom_factor = 0.5
 
-[node name="yellow_button02" type="Sprite" parent="."]
-position = Vector2( 281.948, 263.463 )
-scale = Vector2( 1.11154, 0.377915 )
-texture = ExtResource( 2 )
+[node name="floor" type="StaticBody2D" parent="." index="0"]
 
-[node name="yellow_button3" type="Sprite" parent="."]
-position = Vector2( 713.297, 262.571 )
-scale = Vector2( 1.11154, 0.377915 )
-texture = ExtResource( 2 )
-
-[node name="yellow_button02 2" type="Sprite" parent="."]
-position = Vector2( 507.05, 484.606 )
-scale = Vector2( 5.65629, 2.25448 )
-texture = ExtResource( 2 )
-
-[node name="floor" type="StaticBody2D" parent="."]
 editor/display_folded = true
 input_pickable = false
 collision_layer = 1
-collision_mask = 2
+collision_mask = 1
 constant_linear_velocity = Vector2( 0, 0 )
 constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
-physics_material_override = SubResource( 1 )
 
-[node name="hit_box" type="CollisionShape2D" parent="floor"]
-position = Vector2( 281.873, 263.784 )
+[node name="hit_box" type="CollisionShape2D" parent="floor" index="0"]
+
+position = Vector2( 236.652, 286.395 )
+shape = SubResource( 1 )
+
+[node name="hit_box2" type="CollisionShape2D" parent="floor" index="1"]
+
+position = Vector2( 788.339, 286.395 )
+shape = SubResource( 1 )
+
+[node name="hit_box3" type="CollisionShape2D" parent="floor" index="2"]
+
+position = Vector2( 494.407, 592.384 )
 shape = SubResource( 2 )
 
-[node name="hit_box2" type="CollisionShape2D" parent="floor"]
-position = Vector2( 712.972, 262.277 )
-shape = SubResource( 2 )
+[node name="hit_box4" type="CollisionShape2D" parent="floor" index="3"]
 
-[node name="hit_box3" type="CollisionShape2D" parent="floor"]
-position = Vector2( 507.973, 474.812 )
+position = Vector2( -42.2055, 518.525 )
 shape = SubResource( 3 )
 
-[node name="hit_box4" type="CollisionShape2D" parent="floor"]
-position = Vector2( 1249.64, 377.164 )
-shape = SubResource( 4 )
+[node name="hit_box5" type="CollisionShape2D" parent="floor" index="4"]
 
-[node name="hit_box5" type="CollisionShape2D" parent="floor"]
-position = Vector2( -231.751, 372.62 )
-shape = SubResource( 4 )
+position = Vector2( 1041.57, 517.018 )
+shape = SubResource( 3 )
 
-[node name="players" type="Node2D" parent="."]
+[node name="players" type="Node2D" parent="." index="1"]
 
-[node name="spawn_points" type="Node2D" parent="."]
-editor/display_folded = true
+[node name="spawn_points" type="Node2D" parent="." index="2"]
 
-[node name="0" type="Position2D" parent="spawn_points"]
-position = Vector2( 274.507, 94.3462 )
+[node name="0" type="Position2D" parent="spawn_points" index="0"]
 
-[node name="1" type="Position2D" parent="spawn_points"]
-position = Vector2( 725.146, 106.934 )
+position = Vector2( 213.783, 130.274 )
 
-[node name="instructions" type="Label" parent="."]
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_right = 40.0
-margin_bottom = 14.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 0
-text = "Move - WASD
-Attack - Slash [/]
-Dodge - Dot [.]"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
+[node name="1" type="Position2D" parent="spawn_points" index="1"]
 
-[node name="camera" type="Camera2D" parent="."]
-position = Vector2( 504.901, 278.951 )
+position = Vector2( 813.379, 133.615 )
+
+[node name="camera" type="Camera2D" parent="." index="3"]
+
+position = Vector2( 513.489, 302.186 )
 anchor_mode = 1
 rotating = false
-current = true
+current = false
 zoom = Vector2( 1, 1 )
 limit_left = -10000000
 limit_top = -10000000
@@ -146,41 +101,45 @@ editor_draw_screen = true
 editor_draw_limits = false
 editor_draw_drag_margin = false
 
-[node name="countdown" type="Sprite" parent="."]
-editor/display_folded = true
-position = Vector2( 495.664, 109.109 )
-texture = ExtResource( 3 )
+[node name="countdown" type="Sprite" parent="." index="4"]
 
-[node name="label" type="Label" parent="countdown"]
+editor/display_folded = true
+position = Vector2( 507.498, 132.126 )
+texture = ExtResource( 2 )
+
+[node name="timer" type="Timer" parent="countdown" index="0"]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = false
+autostart = false
+
+[node name="label" type="Label" parent="countdown" index="1"]
+
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = -45.0
-margin_top = -22.0
-margin_right = 52.0
-margin_bottom = 16.0
+margin_left = -38.0
+margin_top = -19.0
+margin_right = 42.0
+margin_bottom = 13.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = ExtResource( 3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Ready"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
-_sections_unfolded = [ "Custom Fonts", "custom_fonts/font" ]
+_sections_unfolded = [ "custom_colors", "custom_fonts" ]
 
-[node name="timer" type="Timer" parent="countdown"]
-process_mode = 1
-wait_time = 1.0
-one_shot = false
-autostart = false
+[node name="on_screen_controls" type="Control" parent="." index="5"]
 
-[node name="on_screen_controls" type="Control" parent="."]
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -194,14 +153,16 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 
-[node name="button" type="Button" parent="on_screen_controls"]
+[node name="button" type="Button" parent="on_screen_controls" index="0"]
+
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 57.0
-margin_right = 12.0
-margin_bottom = 77.0
+margin_left = 11.0
+margin_top = 18.0
+margin_right = 145.0
+margin_bottom = 38.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -217,20 +178,21 @@ text = "On screen controls"
 flat = false
 align = 1
 
-[node name="control_buttons" type="Node2D" parent="on_screen_controls"]
+[node name="control_buttons" type="Node2D" parent="on_screen_controls" index="1"]
+
 editor/display_folded = true
 visible = false
 
-[node name="left" type="TextureButton" parent="on_screen_controls/control_buttons"]
-editor/display_folded = true
+[node name="jump" type="TextureButton" parent="on_screen_controls/control_buttons" index="0"]
+
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 36.0
-margin_top = 349.0
-margin_right = 85.0
-margin_bottom = 398.0
+margin_left = 729.0
+margin_top = 473.0
+margin_right = 778.0
+margin_bottom = 522.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -239,22 +201,22 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 toggle_mode = false
-action_mode = 0
 enabled_focus_mode = 2
 shortcut = null
 group = null
-texture_normal = ExtResource( 5 )
-texture_pressed = ExtResource( 6 )
+texture_normal = ExtResource( 4 )
+texture_pressed = ExtResource( 5 )
 _sections_unfolded = [ "Textures" ]
 
-[node name="label" type="Label" parent="on_screen_controls/control_buttons/left"]
+[node name="label" type="Label" parent="on_screen_controls/control_buttons/jump" index="0"]
+
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 8.0
+margin_left = 4.0
 margin_top = 6.0
-margin_right = 48.0
+margin_right = 44.0
 margin_bottom = 38.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -262,122 +224,24 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 7 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "<--"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Custom Colors", "Custom Fonts" ]
-
-[node name="right" type="TextureButton" parent="on_screen_controls/control_buttons"]
-editor/display_folded = true
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 148.0
-margin_top = 349.0
-margin_right = 197.0
-margin_bottom = 398.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-action_mode = 0
-enabled_focus_mode = 2
-shortcut = null
-group = null
-texture_normal = ExtResource( 5 )
-texture_pressed = ExtResource( 6 )
-_sections_unfolded = [ "Textures" ]
-
-[node name="label" type="Label" parent="on_screen_controls/control_buttons/right"]
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 8.0
-margin_top = 6.0
-margin_right = 48.0
-margin_bottom = 38.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
-custom_fonts/font = ExtResource( 7 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "-->"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Custom Colors", "Custom Fonts" ]
-
-[node name="jump" type="TextureButton" parent="on_screen_controls/control_buttons"]
-editor/display_folded = true
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 782.0
-margin_top = 347.0
-margin_right = 831.0
-margin_bottom = 396.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-action_mode = 0
-enabled_focus_mode = 2
-shortcut = null
-group = null
-texture_normal = ExtResource( 5 )
-texture_pressed = ExtResource( 6 )
-_sections_unfolded = [ "Textures" ]
-
-[node name="label" type="Label" parent="on_screen_controls/control_buttons/jump"]
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 17.0
-margin_top = 7.0
-margin_right = 57.0
-margin_bottom = 39.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
-custom_fonts/font = ExtResource( 7 )
+custom_fonts/font = ExtResource( 3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "J"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
-_sections_unfolded = [ "Custom Colors", "Custom Fonts" ]
+_sections_unfolded = [ "custom_colors", "custom_fonts" ]
 
-[node name="attack" type="TextureButton" parent="on_screen_controls/control_buttons"]
-editor/display_folded = true
+[node name="attack" type="TextureButton" parent="on_screen_controls/control_buttons" index="1"]
+
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 899.0
-margin_top = 347.0
-margin_right = 948.0
-margin_bottom = 396.0
+margin_left = 848.0
+margin_top = 476.0
+margin_right = 897.0
+margin_bottom = 525.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -386,34 +250,150 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 toggle_mode = false
-action_mode = 0
 enabled_focus_mode = 2
 shortcut = null
 group = null
-texture_normal = ExtResource( 5 )
-texture_pressed = ExtResource( 6 )
-_sections_unfolded = [ "Textures" ]
+texture_normal = ExtResource( 4 )
+texture_pressed = ExtResource( 5 )
 
-[node name="label" type="Label" parent="on_screen_controls/control_buttons/attack"]
+[node name="label" type="Label" parent="on_screen_controls/control_buttons/attack" index="0"]
+
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 15.0
-margin_top = 7.0
-margin_right = 55.0
-margin_bottom = 39.0
+margin_left = 12.0
+margin_top = 4.0
+margin_right = 52.0
+margin_bottom = 36.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 7 )
+custom_fonts/font = ExtResource( 3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "A"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
-_sections_unfolded = [ "Custom Colors", "Custom Fonts" ]
+_sections_unfolded = [ "custom_colors", "custom_fonts" ]
+
+[node name="left" type="TextureButton" parent="on_screen_controls/control_buttons" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 90.0
+margin_top = 485.0
+margin_right = 139.0
+margin_bottom = 534.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 4 )
+texture_pressed = ExtResource( 5 )
+_sections_unfolded = [ "Textures" ]
+
+[node name="label" type="Label" parent="on_screen_controls/control_buttons/left" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 6.0
+margin_top = 6.0
+margin_right = 46.0
+margin_bottom = 38.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "<--"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_colors", "custom_fonts" ]
+
+[node name="right" type="TextureButton" parent="on_screen_controls/control_buttons" index="3"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 253.0
+margin_top = 485.0
+margin_right = 302.0
+margin_bottom = 534.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 4 )
+texture_pressed = ExtResource( 5 )
+_sections_unfolded = [ "Textures" ]
+
+[node name="label" type="Label" parent="on_screen_controls/control_buttons/right" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 6.0
+margin_top = 6.0
+margin_right = 46.0
+margin_bottom = 38.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "-->"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_colors", "custom_fonts" ]
+
+[node name="blue_button05" type="Sprite" parent="." index="6"]
+
+position = Vector2( 231.085, 286.005 )
+scale = Vector2( 1.78705, 0.548591 )
+texture = ExtResource( 6 )
+
+[node name="blue_button06" type="Sprite" parent="." index="7"]
+
+position = Vector2( 792.267, 291.016 )
+scale = Vector2( 1.78705, 0.548591 )
+texture = ExtResource( 6 )
+
+[node name="blue_button07" type="Sprite" parent="." index="8"]
+
+position = Vector2( 495.466, 596.659 )
+scale = Vector2( 5.80066, 0.548591 )
+texture = ExtResource( 6 )
+
 

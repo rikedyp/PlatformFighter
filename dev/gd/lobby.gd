@@ -120,7 +120,7 @@ func _on_ninja_pressed():
 	gamestate.my_player_info["scene_file"] = "res://assets/fighters/ninja/ninja.tscn"
 
 func _on_pirate_pressed():
-	gamestate.my_player_info["scene_file"] = "res//assets/fighter/pirate/pirate.tscn"
+	gamestate.my_player_info["scene_file"] = "res://assets/fighters/pirate/pirate.tscn"
 
 func _on_ninja_toggled(pressed):
 	if pressed:

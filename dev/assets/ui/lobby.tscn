@@ -9,14 +9,13 @@
 [sub_resource type="DynamicFont" id=1]
 
 size = 27
-outline_size = 0
-outline_color = Color( 1, 1, 1, 1 )
 use_mipmaps = false
 use_filter = false
 font_data = ExtResource( 5 )
 _sections_unfolded = [ "Extra Spacing", "Font", "Resource", "Settings" ]
 
 [node name="lobby" type="Control"]
+
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 1.0
@@ -33,7 +32,8 @@ size_flags_horizontal = 2
 size_flags_vertical = 2
 script = ExtResource( 1 )
 
-[node name="players" type="Panel" parent="."]
+[node name="players" type="Panel" parent="." index="0"]
+
 editor/display_folded = true
 visible = false
 anchor_left = 0.0
@@ -51,7 +51,8 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 2
 size_flags_vertical = 2
 
-[node name="label" type="Label" parent="players"]
+[node name="label" type="Label" parent="players" index="0"]
+
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -71,7 +72,8 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="start" type="Button" parent="players"]
+[node name="start" type="Button" parent="players" index="1"]
+
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -95,7 +97,8 @@ text = "START!"
 flat = false
 align = 1
 
-[node name="list" type="ItemList" parent="players"]
+[node name="list" type="ItemList" parent="players" index="2"]
+
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -117,7 +120,8 @@ allow_reselect = false
 icon_mode = 1
 fixed_icon_size = Vector2( 0, 0 )
 
-[node name="player_select" type="Panel" parent="."]
+[node name="player_select" type="Panel" parent="." index="1"]
+
 editor/display_folded = true
 visible = false
 anchor_left = 0.0
@@ -135,7 +139,8 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 2
 size_flags_vertical = 2
 
-[node name="label" type="Label" parent="player_select"]
+[node name="label" type="Label" parent="player_select" index="0"]
+
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -155,7 +160,8 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="player_buttons" type="VBoxContainer" parent="player_select"]
+[node name="player_buttons" type="VBoxContainer" parent="player_select" index="1"]
+
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -173,7 +179,8 @@ size_flags_vertical = 2
 alignment = 0
 _sections_unfolded = [ "Grow Direction", "Rect", "Size Flags" ]
 
-[node name="ninja" type="TextureButton" parent="player_select/player_buttons"]
+[node name="ninja" type="TextureButton" parent="player_select/player_buttons" index="0"]
+
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -196,7 +203,8 @@ texture_pressed = ExtResource( 3 )
 texture_hover = ExtResource( 4 )
 _sections_unfolded = [ "Textures" ]
 
-[node name="label" type="Label" parent="player_select/player_buttons/ninja"]
+[node name="label" type="Label" parent="player_select/player_buttons/ninja" index="0"]
+
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -220,7 +228,8 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "custom_colors", "custom_constants", "custom_fonts", "custom_styles" ]
 
-[node name="pirate" type="TextureButton" parent="player_select/player_buttons"]
+[node name="pirate" type="TextureButton" parent="player_select/player_buttons" index="1"]
+
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -244,7 +253,8 @@ texture_pressed = ExtResource( 3 )
 texture_hover = ExtResource( 4 )
 _sections_unfolded = [ "Textures" ]
 
-[node name="label" type="Label" parent="player_select/player_buttons/pirate"]
+[node name="label" type="Label" parent="player_select/player_buttons/pirate" index="0"]
+
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -268,7 +278,8 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "custom_colors", "custom_constants", "custom_fonts", "custom_styles" ]
 
-[node name="ready" type="Button" parent="player_select"]
+[node name="ready" type="Button" parent="player_select" index="2"]
+
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -293,7 +304,8 @@ text = "READY"
 flat = false
 align = 1
 
-[node name="connect" type="Panel" parent="."]
+[node name="connect" type="Panel" parent="." index="2"]
+
 editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
@@ -310,7 +322,8 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 2
 size_flags_vertical = 2
 
-[node name="name_label" type="Label" parent="connect"]
+[node name="name_label" type="Label" parent="connect" index="0"]
+
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -330,7 +343,8 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="name" type="LineEdit" parent="connect"]
+[node name="name" type="LineEdit" parent="connect" index="1"]
+
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -347,16 +361,15 @@ mouse_default_cursor_shape = 1
 size_flags_horizontal = 2
 size_flags_vertical = 2
 text = "Awesome Guy"
-secret_character = "*"
 focus_mode = 2
 context_menu_enabled = true
-clear_button_enabled = false
 placeholder_alpha = 0.6
 caret_blink = false
 caret_blink_speed = 0.65
 caret_position = 0
 
-[node name="ip_label" type="Label" parent="connect"]
+[node name="ip_label" type="Label" parent="connect" index="2"]
+
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -376,7 +389,8 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="ip" type="LineEdit" parent="connect"]
+[node name="ip" type="LineEdit" parent="connect" index="3"]
+
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -393,16 +407,15 @@ mouse_default_cursor_shape = 1
 size_flags_horizontal = 2
 size_flags_vertical = 2
 text = "127.0.0.1"
-secret_character = "*"
 focus_mode = 2
 context_menu_enabled = true
-clear_button_enabled = false
 placeholder_alpha = 0.6
 caret_blink = false
 caret_blink_speed = 0.65
 caret_position = 0
 
-[node name="host" type="Button" parent="connect"]
+[node name="host" type="Button" parent="connect" index="4"]
+
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -426,7 +439,8 @@ text = "Host"
 flat = false
 align = 1
 
-[node name="join" type="Button" parent="connect"]
+[node name="join" type="Button" parent="connect" index="5"]
+
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -450,7 +464,8 @@ text = "Join"
 flat = false
 align = 1
 
-[node name="error_label" type="Label" parent="connect"]
+[node name="error_label" type="Label" parent="connect" index="6"]
+
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -471,7 +486,8 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="error" type="AcceptDialog" parent="."]
+[node name="error" type="AcceptDialog" parent="." index="3"]
+
 visible = false
 anchor_left = 0.0
 anchor_top = 0.0
@@ -491,7 +507,8 @@ resizable = false
 dialog_hide_on_ok = true
 _sections_unfolded = [ "Dialog" ]
 
-[node name="settings" type="Panel" parent="."]
+[node name="settings" type="Panel" parent="." index="4"]
+
 editor/display_folded = true
 visible = false
 anchor_left = 0.0
@@ -509,7 +526,8 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 
-[node name="list" type="ItemList" parent="settings"]
+[node name="list" type="ItemList" parent="settings" index="0"]
+
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -531,7 +549,8 @@ allow_reselect = false
 icon_mode = 1
 fixed_icon_size = Vector2( 0, 0 )
 
-[node name="rounds" type="LineEdit" parent="settings/list"]
+[node name="rounds" type="LineEdit" parent="settings/list" index="1"]
+
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -548,16 +567,15 @@ mouse_default_cursor_shape = 1
 size_flags_horizontal = 1
 size_flags_vertical = 1
 text = "3"
-secret_character = "*"
 focus_mode = 2
 context_menu_enabled = true
-clear_button_enabled = false
 placeholder_alpha = 0.6
 caret_blink = false
 caret_blink_speed = 0.65
 caret_position = 0
 
-[node name="rounds_label" type="Label" parent="settings/list/rounds"]
+[node name="rounds_label" type="Label" parent="settings/list/rounds" index="2"]
+
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -577,7 +595,8 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="label" type="Label" parent="settings"]
+[node name="label" type="Label" parent="settings" index="1"]
+
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -598,8 +617,15 @@ lines_skipped = 0
 max_lines_visible = -1
 
 [connection signal="pressed" from="players/start" to="." method="_on_start_pressed"]
+
 [connection signal="toggled" from="player_select/player_buttons/ninja" to="." method="_on_sedan_toggled"]
+
 [connection signal="toggled" from="player_select/player_buttons/pirate" to="." method="_on_sedan_toggled"]
+
 [connection signal="toggled" from="player_select/ready" to="." method="_on_choose_toggled"]
+
 [connection signal="pressed" from="connect/host" to="." method="_on_host_pressed"]
+
 [connection signal="pressed" from="connect/join" to="." method="_on_join_pressed"]
+
+

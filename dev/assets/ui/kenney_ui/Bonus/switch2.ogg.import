@@ -7,7 +7,10 @@ path="res://.import/switch2.ogg-f2404e28aaf62b2ca639f15fa65d687b.oggstr"
 [deps]
 
 source_file="res://assets/ui/kenney_ui/Bonus/switch2.ogg"
+source_md5="2888f0efc22eb3f8fe5c47438a86925c"
+
 dest_files=[ "res://.import/switch2.ogg-f2404e28aaf62b2ca639f15fa65d687b.oggstr" ]
+dest_md5="e9ce0d39b33fdc58d08ae78743a8166e"
 
 [params]
 

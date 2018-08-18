@@ -7,7 +7,10 @@ path="res://.import/attack_0.png-2ef001ed4a4de5785a6e65473e233e9f.stex"
 [deps]
 
 source_file="res://assets/fighters/mechanic/3x/attack_0.png"
+source_md5="d4a766b230a48333d7d7c31cd9dc2bb3"
+
 dest_files=[ "res://.import/attack_0.png-2ef001ed4a4de5785a6e65473e233e9f.stex" ]
+dest_md5="f63a4f599214233db9ee1ff96ffdf502"
 
 [params]
 

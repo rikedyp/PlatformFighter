@@ -7,7 +7,10 @@ path="res://.import/attack_2.png-afa6872417d10cf3a842f27e5b6ad05f.stex"
 [deps]
 
 source_file="res://assets/fighters/pirate/2x/attack_2.png"
+source_md5="e3607a79f117782f0dc9c25d3e4370a7"
+
 dest_files=[ "res://.import/attack_2.png-afa6872417d10cf3a842f27e5b6ad05f.stex" ]
+dest_md5="38279a2c78fdceacf457ec2caa2503bc"
 
 [params]
 

@@ -7,7 +7,10 @@ path="res://.import/green_button03.png-07213deead1af13969ef12589f96d158.stex"
 [deps]
 
 source_file="res://assets/ui/kenney_ui/PNG/green_button03.png"
+source_md5="c7556626d0a3ebbbef0a9a1135d44a0f"
+
 dest_files=[ "res://.import/green_button03.png-07213deead1af13969ef12589f96d158.stex" ]
+dest_md5="bd272f6ad7fc0634d5a613a6364920e7"
 
 [params]
 

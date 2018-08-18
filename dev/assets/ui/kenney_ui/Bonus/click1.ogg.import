@@ -7,7 +7,10 @@ path="res://.import/click1.ogg-8f2827350ef1f33bbfe2f0796dc1ec45.oggstr"
 [deps]
 
 source_file="res://assets/ui/kenney_ui/Bonus/click1.ogg"
+source_md5="56fdc5328bbe4d1d03b30d493f75b798"
+
 dest_files=[ "res://.import/click1.ogg-8f2827350ef1f33bbfe2f0796dc1ec45.oggstr" ]
+dest_md5="1f732dbaff4c61162170d7ac23e00ae9"
 
 [params]
 

@@ -7,7 +7,10 @@ path="res://.import/x_2.png-dc8d4828212b5e6314763d6ed0955317.stex"
 [deps]
 
 source_file="res://assets/fighters/samurai/1x/x_2.png"
+source_md5="b8b29ec3ba1de3aafce8587f2e674522"
+
 dest_files=[ "res://.import/x_2.png-dc8d4828212b5e6314763d6ed0955317.stex" ]
+dest_md5="052129ee1e723875912f63122226a479"
 
 [params]
 

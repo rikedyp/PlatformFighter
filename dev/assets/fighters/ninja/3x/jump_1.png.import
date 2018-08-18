@@ -7,7 +7,10 @@ path="res://.import/jump_1.png-fe1f341a29ea4af1345d20466abff5ac.stex"
 [deps]
 
 source_file="res://assets/fighters/ninja/3x/jump_1.png"
+source_md5="6395960e00d5d1275e8d823f51cccd36"
+
 dest_files=[ "res://.import/jump_1.png-fe1f341a29ea4af1345d20466abff5ac.stex" ]
+dest_md5="980ddf092a5604711884fd5aa6860f2c"
 
 [params]
 

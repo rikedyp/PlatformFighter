@@ -7,7 +7,10 @@ path="res://.import/yellow_boxTick.png-d348552d7096bf67f70286ad6bb9fa21.stex"
 [deps]
 
 source_file="res://assets/ui/kenney_ui/PNG/yellow_boxTick.png"
+source_md5="857814ce0935cbdac687cccd226eda4e"
+
 dest_files=[ "res://.import/yellow_boxTick.png-d348552d7096bf67f70286ad6bb9fa21.stex" ]
+dest_md5="a685353df5999255ce013df4be30b07f"
 
 [params]
 

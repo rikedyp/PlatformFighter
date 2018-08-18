@@ -7,7 +7,10 @@ path="res://.import/attack_2.png-4a2b8432ff5d10b86eec582c7d270fbf.stex"
 [deps]
 
 source_file="res://assets/fighters/shield_maiden/1x/attack_2.png"
+source_md5="f852a65707bd2f4e2501d66e2263e33c"
+
 dest_files=[ "res://.import/attack_2.png-4a2b8432ff5d10b86eec582c7d270fbf.stex" ]
+dest_md5="08f0dde37d926f80ab175059a5cf8095"
 
 [params]
 

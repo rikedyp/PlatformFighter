@@ -7,7 +7,10 @@ path="res://.import/x_2.png-8377da02619bdcf7cd0a515c80ef11a2.stex"
 [deps]
 
 source_file="res://assets/fighters/archer/2x/x_2.png"
+source_md5="a632bcb2f7766fd44c16f03ef22cfbb3"
+
 dest_files=[ "res://.import/x_2.png-8377da02619bdcf7cd0a515c80ef11a2.stex" ]
+dest_md5="59ff43bb30c9aeda8f591ca3b4d5ebbf"
 
 [params]
 

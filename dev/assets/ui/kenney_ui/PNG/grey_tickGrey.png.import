@@ -7,7 +7,10 @@ path="res://.import/grey_tickGrey.png-3994ac157f7614f066ab0feede905a8e.stex"
 [deps]
 
 source_file="res://assets/ui/kenney_ui/PNG/grey_tickGrey.png"
+source_md5="0d874e5265b833e24dd558c30af3496e"
+
 dest_files=[ "res://.import/grey_tickGrey.png-3994ac157f7614f066ab0feede905a8e.stex" ]
+dest_md5="11db8903e820a39a35a43c8d4a13d970"
 
 [params]
 

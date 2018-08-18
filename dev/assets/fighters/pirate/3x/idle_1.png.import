@@ -7,7 +7,10 @@ path="res://.import/idle_1.png-d344e40a8ea7ae6c50a31e79aea83cc2.stex"
 [deps]
 
 source_file="res://assets/fighters/pirate/3x/idle_1.png"
+source_md5="f464514d4c55984deccc9dc91ffc698a"
+
 dest_files=[ "res://.import/idle_1.png-d344e40a8ea7ae6c50a31e79aea83cc2.stex" ]
+dest_md5="037f82af89fa12f99ba695545e1dc314"
 
 [params]
 

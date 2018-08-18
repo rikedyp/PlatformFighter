@@ -7,7 +7,10 @@ path="res://.import/jump_3.png-ca1d75f992f52124114463c60f847adc.stex"
 [deps]
 
 source_file="res://assets/fighters/samurai/2x/jump_3.png"
+source_md5="49b385d34299b1d1fa7f9d6b201e5f4e"
+
 dest_files=[ "res://.import/jump_3.png-ca1d75f992f52124114463c60f847adc.stex" ]
+dest_md5="bb9d40ae14d11a2f1dfb89c495993482"
 
 [params]
 

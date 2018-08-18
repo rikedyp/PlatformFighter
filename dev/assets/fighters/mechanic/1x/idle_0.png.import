@@ -7,7 +7,10 @@ path="res://.import/idle_0.png-7e60bd1001fa197bc6975414481b4dcf.stex"
 [deps]
 
 source_file="res://assets/fighters/mechanic/1x/idle_0.png"
+source_md5="497e9bdf09fa3e57ab44645eccaaab1a"
+
 dest_files=[ "res://.import/idle_0.png-7e60bd1001fa197bc6975414481b4dcf.stex" ]
+dest_md5="1dd54e66b458dec7166e1fec100c6b93"
 
 [params]
 

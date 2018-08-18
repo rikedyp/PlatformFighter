@@ -7,7 +7,10 @@ path="res://.import/idle_3.png-cdff611c190cd09a4673ee4b8348d761.stex"
 [deps]
 
 source_file="res://assets/fighters/archer/1x/idle_3.png"
+source_md5="7faea482b4a569ef31c64e85072795aa"
+
 dest_files=[ "res://.import/idle_3.png-cdff611c190cd09a4673ee4b8348d761.stex" ]
+dest_md5="54b62b85623dac8bcb93765a295e6acc"
 
 [params]
 

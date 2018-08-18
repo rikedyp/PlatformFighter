@@ -7,7 +7,10 @@ path="res://.import/swim_0.png-a61f0b31950f23a68a1e81a939f0ace9.stex"
 [deps]
 
 source_file="res://assets/fighters/mechanic/5x/swim_0.png"
+source_md5="ebb34d9760ae8044bee5662aab07a243"
+
 dest_files=[ "res://.import/swim_0.png-a61f0b31950f23a68a1e81a939f0ace9.stex" ]
+dest_md5="ac22b655c8145cc07d34643098ba68e8"
 
 [params]
 

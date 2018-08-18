@@ -7,7 +7,10 @@ path="res://.import/Standard sprites upd.png-1d7a2705bae51b3c9d4ada0a4a3e29f7.st
 [deps]
 
 source_file="res://assets/baddies/Standard sprites upd.png"
+source_md5="7e5ef4d3decd46afede7e6de62735084"
+
 dest_files=[ "res://.import/Standard sprites upd.png-1d7a2705bae51b3c9d4ada0a4a3e29f7.stex" ]
+dest_md5="de501a37e77f1c8836792eba3706d715"
 
 [params]
 

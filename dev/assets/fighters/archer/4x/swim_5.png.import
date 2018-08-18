@@ -7,7 +7,10 @@ path="res://.import/swim_5.png-9cfa025243def98e81708c8f6fa19189.stex"
 [deps]
 
 source_file="res://assets/fighters/archer/4x/swim_5.png"
+source_md5="649a99f35c8c8b88cd26d1ad52ff74f7"
+
 dest_files=[ "res://.import/swim_5.png-9cfa025243def98e81708c8f6fa19189.stex" ]
+dest_md5="845eafa07152b09f701b24f71e7f9511"
 
 [params]
 

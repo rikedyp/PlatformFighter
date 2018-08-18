@@ -7,7 +7,10 @@ path="res://.import/red_boxCheckmark.png-a134d8321ed274dce7b859b8d7fd2782.stex"
 [deps]
 
 source_file="res://assets/ui/kenney_ui/PNG/red_boxCheckmark.png"
+source_md5="0fd8b6b61295e08d82f5108780c0bb71"
+
 dest_files=[ "res://.import/red_boxCheckmark.png-a134d8321ed274dce7b859b8d7fd2782.stex" ]
+dest_md5="cc7ed9cf556c4d92713c40ddda31ca8f"
 
 [params]
 

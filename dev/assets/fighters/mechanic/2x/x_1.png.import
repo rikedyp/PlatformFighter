@@ -7,7 +7,10 @@ path="res://.import/x_1.png-0e3590d0077ba011ba091127941aa99c.stex"
 [deps]
 
 source_file="res://assets/fighters/mechanic/2x/x_1.png"
+source_md5="e9d7c41a8f83158b6d1d174fee60b35e"
+
 dest_files=[ "res://.import/x_1.png-0e3590d0077ba011ba091127941aa99c.stex" ]
+dest_md5="03d51659becfe5e418546672bfcfb4eb"
 
 [params]
 

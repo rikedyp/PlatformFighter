@@ -7,7 +7,10 @@ path="res://.import/blue_button07.png-e0e0f930e3f3eedd690eace00342bc05.stex"
 [deps]
 
 source_file="res://assets/ui/kenney_ui/PNG/blue_button07.png"
+source_md5="c5ac9ffc08055cdbb731e6bfb0d2593a"
+
 dest_files=[ "res://.import/blue_button07.png-e0e0f930e3f3eedd690eace00342bc05.stex" ]
+dest_md5="5e70d56589ca58b748ef6f642115e420"
 
 [params]
 

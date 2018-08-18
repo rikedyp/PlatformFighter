@@ -7,7 +7,10 @@ path="res://.import/run_3.png-cccc45874fd464e816e088d29daf71b8.stex"
 [deps]
 
 source_file="res://assets/fighters/pirate/4x/run_3.png"
+source_md5="d2f2effc859404c20d2a469c63fe2f57"
+
 dest_files=[ "res://.import/run_3.png-cccc45874fd464e816e088d29daf71b8.stex" ]
+dest_md5="50dbf785cc2a4abce41eba2c237fe547"
 
 [params]
 

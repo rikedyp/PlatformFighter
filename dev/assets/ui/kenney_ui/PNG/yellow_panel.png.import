@@ -7,7 +7,10 @@ path="res://.import/yellow_panel.png-1ff96bfabcd5fd43d388120f5e98c5ad.stex"
 [deps]
 
 source_file="res://assets/ui/kenney_ui/PNG/yellow_panel.png"
+source_md5="45aee207bbc7cdcb84d8d47024be0d0c"
+
 dest_files=[ "res://.import/yellow_panel.png-1ff96bfabcd5fd43d388120f5e98c5ad.stex" ]
+dest_md5="2d062c2412c4eb37491c2f7612efba92"
 
 [params]
 

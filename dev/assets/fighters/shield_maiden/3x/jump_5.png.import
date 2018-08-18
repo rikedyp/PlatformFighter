@@ -7,7 +7,10 @@ path="res://.import/jump_5.png-b886b3032d01676e98e58a0da77b3030.stex"
 [deps]
 
 source_file="res://assets/fighters/shield_maiden/3x/jump_5.png"
+source_md5="1562521a9346e0c647c6e552819db994"
+
 dest_files=[ "res://.import/jump_5.png-b886b3032d01676e98e58a0da77b3030.stex" ]
+dest_md5="1910428e9cfb4ba08ac2c03050459855"
 
 [params]
 

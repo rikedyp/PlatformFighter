@@ -7,7 +7,10 @@ path="res://.import/swim_4.png-23d0021da1920fccad6bc7771b8d6355.stex"
 [deps]
 
 source_file="res://assets/fighters/gentleman_spy/3x/swim_4.png"
+source_md5="195861eff03677ec4d56e6b0844900ad"
+
 dest_files=[ "res://.import/swim_4.png-23d0021da1920fccad6bc7771b8d6355.stex" ]
+dest_md5="987203be053b83e4165fae6ac16a4a9b"
 
 [params]
 

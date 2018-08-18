@@ -42,7 +42,11 @@ func _on_host_pressed():
 	var player_name = get_node("connect/name").text
 	gamestate.host_game(player_name)
 	refresh_lobby()
-
+	
+func do_nothing():
+	pass
+	
+	
 func _on_join_pressed():
 	if get_node("connect/name").text == "":
 		get_node("connect/error_label").text = "Invalid name!"

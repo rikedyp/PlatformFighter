@@ -7,7 +7,10 @@ path="res://.import/attack_4.png-51b531fb50c04c90d25f7d97fa9451bd.stex"
 [deps]
 
 source_file="res://assets/fighters/pirate/4x/attack_4.png"
+source_md5="0e4908524857eb010551cb3a2b7a0911"
+
 dest_files=[ "res://.import/attack_4.png-51b531fb50c04c90d25f7d97fa9451bd.stex" ]
+dest_md5="47c2a01f429d426312d883fa125c5844"
 
 [params]
 

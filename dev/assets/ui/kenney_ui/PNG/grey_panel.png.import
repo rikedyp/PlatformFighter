@@ -7,7 +7,10 @@ path="res://.import/grey_panel.png-b182250877fb3f00eefc180f835c8abb.stex"
 [deps]
 
 source_file="res://assets/ui/kenney_ui/PNG/grey_panel.png"
+source_md5="4e5babd36c3ed5305564507a7b20d997"
+
 dest_files=[ "res://.import/grey_panel.png-b182250877fb3f00eefc180f835c8abb.stex" ]
+dest_md5="77a679740b3a3c2ce4160f41385e4840"
 
 [params]
 

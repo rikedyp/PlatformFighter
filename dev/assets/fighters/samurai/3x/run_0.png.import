@@ -7,7 +7,10 @@ path="res://.import/run_0.png-0d8fbe50c71d1fe692855ee1e5b913be.stex"
 [deps]
 
 source_file="res://assets/fighters/samurai/3x/run_0.png"
+source_md5="cff7b14aecc9da5af60a1b117bd97bb0"
+
 dest_files=[ "res://.import/run_0.png-0d8fbe50c71d1fe692855ee1e5b913be.stex" ]
+dest_md5="76f812face8297159e0b68a5b2efbf96"
 
 [params]
 

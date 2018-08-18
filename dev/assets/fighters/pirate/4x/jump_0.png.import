@@ -7,7 +7,10 @@ path="res://.import/jump_0.png-05b0c981928bbc171eff0c9792d36b3f.stex"
 [deps]
 
 source_file="res://assets/fighters/pirate/4x/jump_0.png"
+source_md5="1ef0cd14a1eba0317cbab20a55cad484"
+
 dest_files=[ "res://.import/jump_0.png-05b0c981928bbc171eff0c9792d36b3f.stex" ]
+dest_md5="4d9cd2d65841d6d5c79e11974e249d0a"
 
 [params]
 

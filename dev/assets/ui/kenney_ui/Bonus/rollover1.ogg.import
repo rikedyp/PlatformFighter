@@ -7,7 +7,10 @@ path="res://.import/rollover1.ogg-dffa95c8bd7cfb1c39cda51535a64321.oggstr"
 [deps]
 
 source_file="res://assets/ui/kenney_ui/Bonus/rollover1.ogg"
+source_md5="84dc94f2b967d1b2167dfcd92b97cbc6"
+
 dest_files=[ "res://.import/rollover1.ogg-dffa95c8bd7cfb1c39cda51535a64321.oggstr" ]
+dest_md5="f8833b781930760d1c83cafb83f8bbf9"
 
 [params]
 

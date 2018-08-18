@@ -7,7 +7,10 @@ path="res://.import/grey_circle.png-cbf8897a4e6fc777dfe447a312f6e083.stex"
 [deps]
 
 source_file="res://assets/ui/kenney_ui/PNG/grey_circle.png"
+source_md5="81854f64ba73b7046b92b6b9d270cf6b"
+
 dest_files=[ "res://.import/grey_circle.png-cbf8897a4e6fc777dfe447a312f6e083.stex" ]
+dest_md5="c438c96b994076427482fccff061d2c7"
 
 [params]
 

@@ -7,7 +7,10 @@ path="res://.import/attack_2.png-426086a0b5db1ae5c9afb9270dc61b2b.stex"
 [deps]
 
 source_file="res://assets/fighters/ninja/5x/attack_2.png"
+source_md5="699eef540c3295d97373ffaf0ce10a80"
+
 dest_files=[ "res://.import/attack_2.png-426086a0b5db1ae5c9afb9270dc61b2b.stex" ]
+dest_md5="849e7772d88862312482d7b2048a58f7"
 
 [params]
 

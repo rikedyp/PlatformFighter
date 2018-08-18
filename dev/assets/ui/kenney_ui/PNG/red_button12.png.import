@@ -7,7 +7,10 @@ path="res://.import/red_button12.png-182b48623f698ca454dac158262df098.stex"
 [deps]
 
 source_file="res://assets/ui/kenney_ui/PNG/red_button12.png"
+source_md5="5f8811414d9fee20ba30ba149ddc4893"
+
 dest_files=[ "res://.import/red_button12.png-182b48623f698ca454dac158262df098.stex" ]
+dest_md5="b259a6552090d6b21a9ad9b9b607e7d6"
 
 [params]
 

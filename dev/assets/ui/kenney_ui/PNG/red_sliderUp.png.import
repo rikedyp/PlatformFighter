@@ -7,7 +7,10 @@ path="res://.import/red_sliderUp.png-da448e5795d9d130b6d8fd7355df6aca.stex"
 [deps]
 
 source_file="res://assets/ui/kenney_ui/PNG/red_sliderUp.png"
+source_md5="c141445449bb9097f27f3c58a955ce61"
+
 dest_files=[ "res://.import/red_sliderUp.png-da448e5795d9d130b6d8fd7355df6aca.stex" ]
+dest_md5="9bbeaef71a0ce5f896f72801f9f1ff79"
 
 [params]
 

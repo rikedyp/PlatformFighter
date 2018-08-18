@@ -7,7 +7,10 @@ path="res://.import/grey_arrowUpGrey.png-b58547370e7fb1ce64c327a6cbc5ac9e.stex"
 [deps]
 
 source_file="res://assets/ui/kenney_ui/PNG/grey_arrowUpGrey.png"
+source_md5="899db7b15022a63c54ca2856579901f8"
+
 dest_files=[ "res://.import/grey_arrowUpGrey.png-b58547370e7fb1ce64c327a6cbc5ac9e.stex" ]
+dest_md5="dd68b6a462d918046dc13742ffe2dab8"
 
 [params]
 

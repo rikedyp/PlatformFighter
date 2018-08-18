@@ -7,7 +7,10 @@ path="res://.import/Android.png-5ff2d3aa1c60592b1a6c0628e91e20e7.stex"
 [deps]
 
 source_file="res://assets/fighters/android/Android.png"
+source_md5="11a5f9a867fdedaa01632b2eef5d6dd9"
+
 dest_files=[ "res://.import/Android.png-5ff2d3aa1c60592b1a6c0628e91e20e7.stex" ]
+dest_md5="e3be017491cb6cc22b15796d412d2ae1"
 
 [params]
 

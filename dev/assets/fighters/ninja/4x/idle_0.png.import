@@ -7,7 +7,10 @@ path="res://.import/idle_0.png-ea2603cea0ba76750992ecd5274668a4.stex"
 [deps]
 
 source_file="res://assets/fighters/ninja/4x/idle_0.png"
+source_md5="0b4050d2c7b7bc0d025a8a254ac0aeda"
+
 dest_files=[ "res://.import/idle_0.png-ea2603cea0ba76750992ecd5274668a4.stex" ]
+dest_md5="ffc4f7884250c7f8c5bc58a0ca050a57"
 
 [params]
 

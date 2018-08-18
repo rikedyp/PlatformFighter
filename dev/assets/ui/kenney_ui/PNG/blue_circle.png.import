@@ -7,7 +7,10 @@ path="res://.import/blue_circle.png-b3b072055deb3e22aef3607aba4d77b4.stex"
 [deps]
 
 source_file="res://assets/ui/kenney_ui/PNG/blue_circle.png"
+source_md5="8014a20c12b12017809cbb2145f908f1"
+
 dest_files=[ "res://.import/blue_circle.png-b3b072055deb3e22aef3607aba4d77b4.stex" ]
+dest_md5="2969c35af41c853d546392737f9dbef4"
 
 [params]
 

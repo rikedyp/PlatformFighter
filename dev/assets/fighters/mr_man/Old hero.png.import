@@ -7,7 +7,10 @@ path="res://.import/Old hero.png-67208af3b31797626e9b41f8511b73f5.stex"
 [deps]
 
 source_file="res://assets/fighters/mr_man/Old hero.png"
+source_md5="add6aa5e08348679066b8d55a194aeb5"
+
 dest_files=[ "res://.import/Old hero.png-67208af3b31797626e9b41f8511b73f5.stex" ]
+dest_md5="1ed5c32a23554a942dc3ce00c7712e3a"
 
 [params]
 

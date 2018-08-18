@@ -7,7 +7,10 @@ path="res://.import/grey_box.png-8cc6902af2f9fb8dbaf01bc8b8aa525b.stex"
 [deps]
 
 source_file="res://assets/ui/kenney_ui/PNG/grey_box.png"
+source_md5="a35f8012e8ce0ae6e395f1a1441a6d4d"
+
 dest_files=[ "res://.import/grey_box.png-8cc6902af2f9fb8dbaf01bc8b8aa525b.stex" ]
+dest_md5="ebe8d69e9cf93f89e745a0515e3068d0"
 
 [params]
 

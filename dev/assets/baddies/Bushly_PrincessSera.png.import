@@ -7,7 +7,10 @@ path="res://.import/Bushly_PrincessSera.png-c85b1dcf7a7e66f9ceef818660a57eaa.ste
 [deps]
 
 source_file="res://assets/baddies/Bushly_PrincessSera.png"
+source_md5="61fcd51a668276a43b28409be0f964b0"
+
 dest_files=[ "res://.import/Bushly_PrincessSera.png-c85b1dcf7a7e66f9ceef818660a57eaa.stex" ]
+dest_md5="e38af732dd28fb367e4bad33c2ace253"
 
 [params]
 

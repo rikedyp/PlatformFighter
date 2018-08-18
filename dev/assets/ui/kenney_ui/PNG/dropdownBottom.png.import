@@ -7,7 +7,10 @@ path="res://.import/dropdownBottom.png-ea63cbf4d652be7e578b383ff23a00b7.stex"
 [deps]
 
 source_file="res://assets/ui/kenney_ui/PNG/dropdownBottom.png"
+source_md5="469ce2a7bbbab6e2db1ae2bc790fd436"
+
 dest_files=[ "res://.import/dropdownBottom.png-ea63cbf4d652be7e578b383ff23a00b7.stex" ]
+dest_md5="02a3a5ae0617686eba4a2898e8822640"
 
 [params]
 

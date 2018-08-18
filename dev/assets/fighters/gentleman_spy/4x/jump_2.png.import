@@ -7,7 +7,10 @@ path="res://.import/jump_2.png-79171f2d50c36f5d7e844d54e3cbd253.stex"
 [deps]
 
 source_file="res://assets/fighters/gentleman_spy/4x/jump_2.png"
+source_md5="2fe85cce0e98ec1f6d54a685932cd69e"
+
 dest_files=[ "res://.import/jump_2.png-79171f2d50c36f5d7e844d54e3cbd253.stex" ]
+dest_md5="a85b8c550dd3bea660368711b07756f3"
 
 [params]
 

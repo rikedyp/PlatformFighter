@@ -7,7 +7,10 @@ path="res://.import/run_4.png-79015a2e71198da2417bab771f6072da.stex"
 [deps]
 
 source_file="res://assets/fighters/archer/4x/run_4.png"
+source_md5="5c29cc9351dd69b72279bc1a87d7e93d"
+
 dest_files=[ "res://.import/run_4.png-79015a2e71198da2417bab771f6072da.stex" ]
+dest_md5="a6636cda2997780c13aa6c1b6ec54e80"
 
 [params]
 

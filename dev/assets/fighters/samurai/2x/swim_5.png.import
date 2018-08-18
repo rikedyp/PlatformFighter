@@ -7,7 +7,10 @@ path="res://.import/swim_5.png-eeb7737dc9f32cfb96aeebee4f4b03bc.stex"
 [deps]
 
 source_file="res://assets/fighters/samurai/2x/swim_5.png"
+source_md5="69d8c8ce4ca349bf3c94124ad88acba1"
+
 dest_files=[ "res://.import/swim_5.png-eeb7737dc9f32cfb96aeebee4f4b03bc.stex" ]
+dest_md5="7d201fa3abbada7e6beb254f485a987c"
 
 [params]
 

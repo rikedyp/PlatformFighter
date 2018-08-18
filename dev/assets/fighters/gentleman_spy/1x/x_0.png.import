@@ -7,7 +7,10 @@ path="res://.import/x_0.png-6d03a148e35c662dad36e7afd43c27fe.stex"
 [deps]
 
 source_file="res://assets/fighters/gentleman_spy/1x/x_0.png"
+source_md5="280140b4a6c526f1197d2e9a3a8a8968"
+
 dest_files=[ "res://.import/x_0.png-6d03a148e35c662dad36e7afd43c27fe.stex" ]
+dest_md5="6ebe87beab55ff79cc56c3e77047ee4b"
 
 [params]
 

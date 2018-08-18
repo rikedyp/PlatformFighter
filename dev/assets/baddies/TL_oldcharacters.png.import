@@ -7,7 +7,10 @@ path="res://.import/TL_oldcharacters.png-3940008ff0df81b48dd5cf1f0e20f7c6.stex"
 [deps]
 
 source_file="res://assets/baddies/TL_oldcharacters.png"
+source_md5="1ebca1622261449f55aca517e236e425"
+
 dest_files=[ "res://.import/TL_oldcharacters.png-3940008ff0df81b48dd5cf1f0e20f7c6.stex" ]
+dest_md5="791966a1dcb187115083772997b618ec"
 
 [params]
 

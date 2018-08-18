@@ -7,7 +7,10 @@ path="res://.import/idle_3.png-e304e30c5120af3e29db8b322a0f357e.stex"
 [deps]
 
 source_file="res://assets/fighters/shield_maiden/5x/idle_3.png"
+source_md5="0542c3cc93e1838fd0f3c6d48e29c4fd"
+
 dest_files=[ "res://.import/idle_3.png-e304e30c5120af3e29db8b322a0f357e.stex" ]
+dest_md5="89b1178cc4dc5cc5bb3f8a9a6a8d114e"
 
 [params]
 

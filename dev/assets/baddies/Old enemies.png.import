@@ -7,7 +7,10 @@ path="res://.import/Old enemies.png-60386c64058ce1cd1fe5293fc83d05c5.stex"
 [deps]
 
 source_file="res://assets/baddies/Old enemies.png"
+source_md5="3c87fa05b7e6c3da43092335d6c316c4"
+
 dest_files=[ "res://.import/Old enemies.png-60386c64058ce1cd1fe5293fc83d05c5.stex" ]
+dest_md5="c7bc5add8a5a7895bd9f87887b8a0b34"
 
 [params]
 

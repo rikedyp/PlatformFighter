@@ -7,7 +7,10 @@ path="res://.import/idle_3.png-4b9eccde1bf6166ecf52fdc5f23e1e84.stex"
 [deps]
 
 source_file="res://assets/fighters/samurai/4x/idle_3.png"
+source_md5="75be8cbd3e1937d9528ed7be0685186e"
+
 dest_files=[ "res://.import/idle_3.png-4b9eccde1bf6166ecf52fdc5f23e1e84.stex" ]
+dest_md5="ee60847538dfdef6036b9db91a54f5bb"
 
 [params]
 

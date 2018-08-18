@@ -7,7 +7,10 @@ path="res://.import/grey_checkmarkWhite.png-6a6187502956469708b50bb644adbd66.ste
 [deps]
 
 source_file="res://assets/ui/kenney_ui/PNG/grey_checkmarkWhite.png"
+source_md5="02163ee976da2064a73a1354bae339ab"
+
 dest_files=[ "res://.import/grey_checkmarkWhite.png-6a6187502956469708b50bb644adbd66.stex" ]
+dest_md5="9e0cefcfbb78604b1432b10d915ec603"
 
 [params]
 

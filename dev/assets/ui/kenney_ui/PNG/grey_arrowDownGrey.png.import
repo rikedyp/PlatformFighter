@@ -7,7 +7,10 @@ path="res://.import/grey_arrowDownGrey.png-238a9b7d3b154964082773b677a006c3.stex
 [deps]
 
 source_file="res://assets/ui/kenney_ui/PNG/grey_arrowDownGrey.png"
+source_md5="0278275ab5ef52e604b89dffa6263512"
+
 dest_files=[ "res://.import/grey_arrowDownGrey.png-238a9b7d3b154964082773b677a006c3.stex" ]
+dest_md5="9f0fcdef9679a9a550a0a0f78873fc64"
 
 [params]
 

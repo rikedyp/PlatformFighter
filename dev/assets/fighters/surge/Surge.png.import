@@ -7,7 +7,10 @@ path="res://.import/Surge.png-a5f28770e31932abc13c5c4773c0ea89.stex"
 [deps]
 
 source_file="res://assets/fighters/surge/Surge.png"
+source_md5="b78cc7025de07dc05620ddd5856beb73"
+
 dest_files=[ "res://.import/Surge.png-a5f28770e31932abc13c5c4773c0ea89.stex" ]
+dest_md5="407e709928cce8a666a5faaee29a7080"
 
 [params]
 

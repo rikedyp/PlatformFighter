@@ -7,7 +7,10 @@ path="res://.import/run_3.png-9301064ba79028f1d6347f1fb5305800.stex"
 [deps]
 
 source_file="res://assets/fighters/shield_maiden/5x/run_3.png"
+source_md5="804938d72f41ce1e175999f0a6ad6432"
+
 dest_files=[ "res://.import/run_3.png-9301064ba79028f1d6347f1fb5305800.stex" ]
+dest_md5="7c1c17e54ce797feb8dbb80216929d69"
 
 [params]
 

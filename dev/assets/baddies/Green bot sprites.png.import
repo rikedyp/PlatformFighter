@@ -7,7 +7,10 @@ path="res://.import/Green bot sprites.png-de3a3e789bc30be78717dda4b58e1468.stex"
 [deps]
 
 source_file="res://assets/baddies/Green bot sprites.png"
+source_md5="334a018f11df4fe3a8facd08a925db77"
+
 dest_files=[ "res://.import/Green bot sprites.png-de3a3e789bc30be78717dda4b58e1468.stex" ]
+dest_md5="efca5d80cc23d66f94a6a23e437af46f"
 
 [params]
 

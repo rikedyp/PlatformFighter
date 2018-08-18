@@ -7,7 +7,10 @@ path="res://.import/jump_3.png-fb6d009c5bc4e2b564dd11876bb52e33.stex"
 [deps]
 
 source_file="res://assets/fighters/archer/2x/jump_3.png"
+source_md5="0194a9c8fd3b407efa16ac3a6bad9e33"
+
 dest_files=[ "res://.import/jump_3.png-fb6d009c5bc4e2b564dd11876bb52e33.stex" ]
+dest_md5="7362717ea5c9d314a0409c19229647a9"
 
 [params]
 

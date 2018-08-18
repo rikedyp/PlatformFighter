@@ -7,7 +7,10 @@ path="res://.import/swim_4.png-dc666f7e8f5568bdec8e013c27a45353.stex"
 [deps]
 
 source_file="res://assets/fighters/shield_maiden/1x/swim_4.png"
+source_md5="88db577465fb8811d688b854f0cbe85e"
+
 dest_files=[ "res://.import/swim_4.png-dc666f7e8f5568bdec8e013c27a45353.stex" ]
+dest_md5="ef1ff2d6fcdff3c33cc7f23da2dea256"
 
 [params]
 

@@ -7,7 +7,10 @@ path="res://.import/yellow_button02.png-9153c9ac803ea4fac2c2b8535496579d.stex"
 [deps]
 
 source_file="res://assets/stages/yellow_button02.png"
+source_md5="b9acc47044e6a0901cdc6c9ce4a1c14b"
+
 dest_files=[ "res://.import/yellow_button02.png-9153c9ac803ea4fac2c2b8535496579d.stex" ]
+dest_md5="fc4e01e36144d260823c1b4b61e0ab3d"
 
 [params]
 

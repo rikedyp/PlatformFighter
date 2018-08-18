@@ -7,7 +7,10 @@ path="res://.import/blue_tick.png-2d8f2d8fbc9cb220ff1d8b15334019e1.stex"
 [deps]
 
 source_file="res://assets/ui/kenney_ui/PNG/blue_tick.png"
+source_md5="c62e8fb6709be91a656e68addffb8065"
+
 dest_files=[ "res://.import/blue_tick.png-2d8f2d8fbc9cb220ff1d8b15334019e1.stex" ]
+dest_md5="6c6445aa55b4c5a6b837dad0d89066c9"
 
 [params]
 

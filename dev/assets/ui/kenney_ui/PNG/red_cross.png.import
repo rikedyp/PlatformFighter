@@ -7,7 +7,10 @@ path="res://.import/red_cross.png-79a51ab5be60588c00659dbc2494d25a.stex"
 [deps]
 
 source_file="res://assets/ui/kenney_ui/PNG/red_cross.png"
+source_md5="bfc121d09d1ebf57b0f0f43ae4797663"
+
 dest_files=[ "res://.import/red_cross.png-79a51ab5be60588c00659dbc2494d25a.stex" ]
+dest_md5="166a7c893e3684b18182ec9b0e10e71a"
 
 [params]
 

@@ -7,7 +7,10 @@ path="res://.import/idle_0.png-b2e0c1a71bb8ef9a713b9720fb26c3e8.stex"
 [deps]
 
 source_file="res://assets/fighters/gentleman_spy/1x/idle_0.png"
+source_md5="e9a1b203aae688e02b9b1de0bc1d77ff"
+
 dest_files=[ "res://.import/idle_0.png-b2e0c1a71bb8ef9a713b9720fb26c3e8.stex" ]
+dest_md5="2684ad20bfd33e242734d9a3494ccdd7"
 
 [params]
 

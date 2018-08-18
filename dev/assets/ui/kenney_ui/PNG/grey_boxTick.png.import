@@ -7,7 +7,10 @@ path="res://.import/grey_boxTick.png-5b3046203555b39cbd97db55a61a8688.stex"
 [deps]
 
 source_file="res://assets/ui/kenney_ui/PNG/grey_boxTick.png"
+source_md5="ca19acdab7695f7531dcc8534463fea1"
+
 dest_files=[ "res://.import/grey_boxTick.png-5b3046203555b39cbd97db55a61a8688.stex" ]
+dest_md5="ad25413cf91d7da0718b3393daa40550"
 
 [params]
 

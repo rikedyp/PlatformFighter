@@ -7,7 +7,10 @@ path="res://.import/PFighter_Stable.png-c2ac27d7b3d22929c4dd3e0a2bd726b5.stex"
 [deps]
 
 source_file="res://bin/html/PFighter_Stable.png"
+source_md5="299da75e49286e888450cf32a391ba86"
+
 dest_files=[ "res://.import/PFighter_Stable.png-c2ac27d7b3d22929c4dd3e0a2bd726b5.stex" ]
+dest_md5="8d750247939fc85ff59e34547119dea2"
 
 [params]
 

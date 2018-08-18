@@ -7,7 +7,10 @@ path="res://.import/run_0.png-5c57e21e52df7b723fa8d84282bf78b8.stex"
 [deps]
 
 source_file="res://assets/fighters/ninja/3x/run_0.png"
+source_md5="c0cf368598f3fd3df64491851e14a928"
+
 dest_files=[ "res://.import/run_0.png-5c57e21e52df7b723fa8d84282bf78b8.stex" ]
+dest_md5="307b876935538e8aef02e6e0c83897be"
 
 [params]
 

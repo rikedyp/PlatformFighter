@@ -7,7 +7,10 @@ path="res://.import/attack_3.png-9bcc60e732885a050e2c816f7fdd6691.stex"
 [deps]
 
 source_file="res://assets/fighters/archer/3x/attack_3.png"
+source_md5="8dccc266fe36ef95d2280556d364cae2"
+
 dest_files=[ "res://.import/attack_3.png-9bcc60e732885a050e2c816f7fdd6691.stex" ]
+dest_md5="5addd8b151876de7cf0b7d97bc39c944"
 
 [params]
 

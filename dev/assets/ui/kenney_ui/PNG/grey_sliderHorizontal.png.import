@@ -7,7 +7,10 @@ path="res://.import/grey_sliderHorizontal.png-d2b8cd85e6280858c70df47640341967.s
 [deps]
 
 source_file="res://assets/ui/kenney_ui/PNG/grey_sliderHorizontal.png"
+source_md5="60aefe4d46fb55b55b61565fb173ca10"
+
 dest_files=[ "res://.import/grey_sliderHorizontal.png-d2b8cd85e6280858c70df47640341967.stex" ]
+dest_md5="82df1e4eb944c8d484b87d2267369f71"
 
 [params]
 

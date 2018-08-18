@@ -7,7 +7,10 @@ path="res://.import/grey_boxCheckmark.png-7660756626b75d07c54b3cacb0a45c39.stex"
 [deps]
 
 source_file="res://assets/ui/kenney_ui/PNG/grey_boxCheckmark.png"
+source_md5="881e01ac96d239c7a4778bda942213c5"
+
 dest_files=[ "res://.import/grey_boxCheckmark.png-7660756626b75d07c54b3cacb0a45c39.stex" ]
+dest_md5="836195d4f33df7634c4b98333d72afad"
 
 [params]
 

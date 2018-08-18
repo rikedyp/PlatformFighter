@@ -7,7 +7,10 @@ path="res://.import/swim_0.png-c843884ed1efa3a7199795bf054f9630.stex"
 [deps]
 
 source_file="res://assets/fighters/ninja/1x/swim_0.png"
+source_md5="6dee656e0c9eec8b10842e0650644858"
+
 dest_files=[ "res://.import/swim_0.png-c843884ed1efa3a7199795bf054f9630.stex" ]
+dest_md5="12af66e906514c4ccc0f2ebfb68bf9ee"
 
 [params]
 

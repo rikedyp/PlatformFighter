@@ -7,7 +7,10 @@ path="res://.import/attack_2.png-fe8f16a971b576e85616b495922e2fd9.stex"
 [deps]
 
 source_file="res://assets/fighters/gentleman_spy/5x/attack_2.png"
+source_md5="7650dd74c103199af8ec278ecdd8777e"
+
 dest_files=[ "res://.import/attack_2.png-fe8f16a971b576e85616b495922e2fd9.stex" ]
+dest_md5="b26daa1728b2a8ff70281d730930811f"
 
 [params]
 

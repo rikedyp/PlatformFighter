@@ -7,7 +7,10 @@ path="res://.import/blue_sliderRight.png-843ee44c207bb0841085662501003415.stex"
 [deps]
 
 source_file="res://assets/ui/kenney_ui/PNG/blue_sliderRight.png"
+source_md5="95f74e20102ee2a7e027fb4c843c8b71"
+
 dest_files=[ "res://.import/blue_sliderRight.png-843ee44c207bb0841085662501003415.stex" ]
+dest_md5="6c7bb78edd3da7662d5f83911595bcaf"
 
 [params]
 

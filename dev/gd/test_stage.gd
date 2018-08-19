@@ -1,3 +1,4 @@
+# test_stage.gd
 extends Node2D
 
 # class member variables go here, for example:

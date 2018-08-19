@@ -1,3 +1,4 @@
+# ninja.gd
 extends "res://gd/player.gd"
 
 # class member variables go here, for example:

@@ -8,6 +8,7 @@ CONTENTS
 [Overview](#overview)  
 [Gameplay](#gameplay)  
 [Godot project structure](#godot-project-structure)  
+[Development](#development)
 [Multiplayer methods](#multiplayer-methods)
 [Future ideas](#future-ideas)  
 [Fighters](#fighters)
@@ -48,7 +49,7 @@ CONTENTS
 	- icon.png
 	- assets
 		- fighters
-		- baddies [not used]
+		- baddies [not currently used]
 		- fonts
 		- stages
 		- ui
@@ -59,6 +60,13 @@ CONTENTS
 
 - release
 	Release binaries by version
+
+### Development
+Each version is described by its github project board  
+ToDo | In Progress | Done | Testing  
+
+All TODOs, including inside .gd file comments, must be completed before a release is considered ready  
+If a TODO isn't essential for that release, put it into Future ideas section until development of the next version commences.  
 
 ### Future ideas
 - Quick fall maybe

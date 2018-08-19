@@ -1,3 +1,4 @@
+# lobby.gd
 extends Control
 
 var player_scene

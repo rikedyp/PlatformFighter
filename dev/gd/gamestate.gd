@@ -1,3 +1,4 @@
+# gamestate.gd
 extends Node
 
 # Default game port

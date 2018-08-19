@@ -1,3 +1,4 @@
+# pirate.gd
 extends "res://gd/player.gd"
 
 # class member variables go here, for example:
@@ -22,7 +23,9 @@ func _custom_action(delta, attack):
 		anim.set_animation("attack")
 		anim.play()
 		attacking = true
+		#jumping = false
 	if attacking:
+		#velocity.y = 0
 		attack_time += delta
 		if attack_time > 0.4 and attack_time < 0.44:
 			if not shooting:
@@ -38,4 +41,9 @@ func _custom_action(delta, attack):
 			#attacking = false
 
 func shoot():
-	pass
+	print("shoot")
+	var shot = load("res://assets/fighters/pirate/shot.tscn").instance()
+	#add_child(shot)
+	shot.dir = dir
+	shot.position = get_global_position()
+	get_parent().get_parent().add_child(shot)

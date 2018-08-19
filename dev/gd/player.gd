@@ -1,3 +1,4 @@
+# player.gd
 extends KinematicBody2D
 
 # These variables determine handling of fighter
@@ -17,7 +18,7 @@ var attacking = false
 var attack_time = 0.0
 var velocity = Vector2()
 
-#This updates the position on the other end
+# This updates the position for other clients
 slave func set_pos_and_motion(p_pos, p_vel, p_dir, attack_state, jump_state, animation, play):
 	position = p_pos
 	velocity = p_vel
@@ -60,6 +61,7 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("dodge"):
 		get_killed()
 	if Input.is_action_just_pressed("ui_select"):
+		# TODO: Check synchronisity of this type of input function
 		print("I'm ALIVE!")
 
 func handle_input(delta):
@@ -69,7 +71,7 @@ func handle_input(delta):
 	var jump = Input.is_action_just_pressed("jump")
 	var attack = Input.is_action_just_pressed("attack")
 	var acceleration = Vector2()
-	if jump and jump_flag > 0:
+	if jump and jump_flag > 0 and not attacking:
 		print("jump")
 		velocity.y = -jump_power
 		jumping = true
@@ -78,7 +80,7 @@ func handle_input(delta):
 		jump_time = 0.0
 		anim.set_animation("jump")
 		anim.set_frame(0)
-	if jumping:
+	if jumping and not attacking:
 		jump_time += delta
 		anim.set_animation("jump")
 	if move_left and not attacking:
@@ -105,8 +107,13 @@ func handle_input(delta):
 		velocity.x = 0
 	elif jumping:
 		velocity.x = 0
+	#if not jumping:
+		# bug fix - need to make so can safely jump and attack
 	_custom_action(delta, attack)
-	acceleration.y += gravity#*jump_time
+	if attacking:
+		velocity.y = 0
+	else:
+		acceleration.y += gravity#*jump_time
 	#print(velocity)
 	#if not on_floor:
 	velocity += acceleration#*jump_time
@@ -155,7 +162,7 @@ func handle_collisions():
 					velocity.y -= jump_power
 				print("collision")
 				print(col.name)
-				col.rpc("get_killed")
+				#col.get_killed()
 
 func _on_animation_finished():
 	if anim.animation == "attack":
@@ -165,7 +172,11 @@ func _on_animation_finished():
 
 func _on_head_entered(body):
 	print("head enter")
-	if int(body.name) in gamestate.players and body.name != get_name():# or body.name == "1":
+	print(body.name)
+	#print(body.jumping)
+	print("players")
+	print(gamestate.players)
+	if body.name in gamestate.players and body.name != get_name():# or body.name == "1":
 		print(body.name)
 		print(body.attacking)
 		print(body.jumping)

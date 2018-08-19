@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://gd/test_stage.gd" type="Script" id=1]
 [ext_resource path="res://assets/ui/kenney_ui/PNG/blue_button13.png" type="Texture" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://assets/ui/kenney_ui/PNG/grey_button12.png" type="Texture" id=4]
 [ext_resource path="res://assets/ui/kenney_ui/PNG/grey_button13.png" type="Texture" id=5]
 [ext_resource path="res://assets/ui/kenney_ui/PNG/blue_button05.png" type="Texture" id=6]
+[ext_resource path="res://assets/fighters/pirate/pirate.tscn" type="PackedScene" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -15,12 +16,12 @@ extents = Vector2( 162.345, 10 )
 [sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
-extents = Vector2( 548.224, 10 )
+extents = Vector2( 1006.73, 10 )
 
 [sub_resource type="RectangleShape2D" id=3]
 
 custom_solver_bias = 0.0
-extents = Vector2( 10, 70.3477 )
+extents = Vector2( 10, 587.84 )
 
 [node name="test_stage" type="Node2D" index="0"]
 
@@ -29,7 +30,6 @@ zoom_factor = 0.5
 
 [node name="floor" type="StaticBody2D" parent="." index="0"]
 
-editor/display_folded = true
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -55,12 +55,12 @@ shape = SubResource( 2 )
 
 [node name="hit_box4" type="CollisionShape2D" parent="floor" index="3"]
 
-position = Vector2( -42.2055, 518.525 )
+position = Vector2( -376.947, 292.575 )
 shape = SubResource( 3 )
 
 [node name="hit_box5" type="CollisionShape2D" parent="floor" index="4"]
 
-position = Vector2( 1041.57, 517.018 )
+position = Vector2( 1281.47, 302.226 )
 shape = SubResource( 3 )
 
 [node name="players" type="Node2D" parent="." index="1"]
@@ -395,5 +395,9 @@ texture = ExtResource( 6 )
 position = Vector2( 495.466, 596.659 )
 scale = Vector2( 5.80066, 0.548591 )
 texture = ExtResource( 6 )
+
+[node name="pirate" parent="." index="9" instance=ExtResource( 7 )]
+
+position = Vector2( 853.975, 524.851 )
 
 

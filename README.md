@@ -3,7 +3,7 @@ A platforming multiplayer fighting game a la TowerFall / Smash Bros etc.
 
 Current version 0.0  
 Version 0.1 progress  
-![Progress](http://progressed.io/bar/38)   
+![Progress](http://progressed.io/bar/55)   
 
 
 Check Design.md for a comprehensive view of the project

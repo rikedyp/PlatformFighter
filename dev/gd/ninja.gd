@@ -4,6 +4,7 @@ extends "res://gd/player.gd"
 # var a = 2
 # var b = "textvar"
 #var attacking = false
+var force_fall = false # flag for ninja slow-fall behaviour
 
 func _ready():
 	# Called when the node is added to the scene for the first time.
@@ -36,7 +37,12 @@ func create_attack_box():
 #	# Update game logic here.
 #	pass
 
-func _process_attack(delta, attack):
+func _custom_action(delta, attack):
+	# --- FIGHTER SPECIFIC ACTION --- #
+	if Input.is_action_pressed("ui_down"):
+		force_fall = true
+	else:
+		force_fall = false
 	if attack:
 		create_attack_box()
 		attack_time = 0.0
@@ -53,9 +59,7 @@ func _process_attack(delta, attack):
 				velocity.x = move_speed
 			else:
 				velocity.x = -move_speed
-
-	# --- FOR NINJA ONLY --- #
-#	if on_floor and not jumping:
-#		velocity.y = 0
-	# --- TYPICAL FIGHTER --- #
+	# Ninja slow-fall
+	if on_floor and not jumping and not force_fall:
+		velocity.y = 0
 

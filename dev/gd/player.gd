@@ -63,6 +63,7 @@ func _physics_process(delta):
 		print("I'm ALIVE!")
 
 func handle_input(delta):
+	# --- GENERAL PLAYER INPUT AND MOTION --- #
 	var move_left = Input.is_action_pressed("move_left")
 	var move_right = Input.is_action_pressed("move_right")
 	var jump = Input.is_action_just_pressed("jump")
@@ -104,13 +105,14 @@ func handle_input(delta):
 		velocity.x = 0
 	elif jumping:
 		velocity.x = 0
-	_process_attack(delta, attack)
+	_custom_action(delta, attack)
 	acceleration.y += gravity#*jump_time
 	#print(velocity)
 	#if not on_floor:
 	velocity += acceleration#*jump_time
 
-func _process_attack(delta, attack):
+func _custom_action(delta, attack):
+	# --- FIGHTER SPECIFIC ACTION --- #
 	if attack:
 		#create_attack_box()
 		attack_time = 0.0
@@ -127,13 +129,6 @@ func _process_attack(delta, attack):
 				velocity.x = move_speed
 			else:
 				velocity.x = -move_speed
-
-	# --- FOR NINJA ONLY --- #
-#	if on_floor and not jumping:
-#		velocity.y = 0
-	# --- TYPICAL FIGHTER --- #
-	
-	#$label.text = str(acceleration) + ", " + str(velocity) + ", " + str(jumping)
 
 func handle_collisions():
 	var normal = move_and_slide(velocity) # col = collision
@@ -161,17 +156,6 @@ func handle_collisions():
 				print("collision")
 				print(col.name)
 				col.rpc("get_killed")
-#	if col:
-#		#print(col.collider.name)
-#		if col.collider.name == "floor" and velocity.y > 0:
-#			velocity.y = 0
-#		if col.collider.name == "player" and name != "player":
-#			print("player player")
-#			get_killed()
-#		if col.collider.name == "player_2" and name != "player_2":
-#			print("got player_2")
-#		jump_flag=2
-#		jumping = false
 
 func _on_animation_finished():
 	if anim.animation == "attack":

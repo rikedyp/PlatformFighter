@@ -139,6 +139,7 @@ _sections_unfolded = [ "custom_colors", "custom_fonts" ]
 
 [node name="on_screen_controls" type="Control" parent="." index="5"]
 
+visible = false
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0

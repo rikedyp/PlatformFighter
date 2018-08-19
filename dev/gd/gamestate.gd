@@ -242,22 +242,4 @@ sync func respawn_player(id):
 	var node_name = "/root/test_stage/players/" + id
 	print("resapwn")
 	var respawn_player = get_node(node_name)
-#	if int(id) == get_tree().get_network_unique_id():
-#		print("is me")
-#		respawn_player = get_node(node_name)
-#		#respawn_player = load(my_player_info["scene_file"]).instance()
-#	#get_node("/root/test_stage")
-#	else:
-#		respawn_player = load(players[id]["scene_file"]).instance()
-#	print(node_name)
 	respawn_player.set_global_position(get_node("/root/test_stage/spawn_points/0").get_global_position())
-	#print(respawn_player)
-	#print(get_parent().name)
-	#print(get_node("/root/test_stage").name)
-	#respawn_player.set_name(id) # doesn't work after 2 respawns?
-	#.x, get_node("/root/test_stage/spawn_points/0").y)
-	#get_node("/root/test_stage").add_child(respawn_player)
-	#respawn_player.active = true
-	#queue_free()
-	##World.add_child(respawn_player)
-	#pass

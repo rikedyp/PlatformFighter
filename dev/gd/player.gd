@@ -104,8 +104,15 @@ func handle_input(delta):
 		velocity.x = 0
 	elif jumping:
 		velocity.x = 0
+	_process_attack(delta, attack)
+	acceleration.y += gravity#*jump_time
+	#print(velocity)
+	#if not on_floor:
+	velocity += acceleration#*jump_time
+
+func _process_attack(delta, attack):
 	if attack:
-		create_attack_box()
+		#create_attack_box()
 		attack_time = 0.0
 		anim.set_animation("attack")
 		anim.play()
@@ -120,10 +127,7 @@ func handle_input(delta):
 				velocity.x = move_speed
 			else:
 				velocity.x = -move_speed
-	acceleration.y += gravity#*jump_time
-	#print(velocity)
-	#if not on_floor:
-	velocity += acceleration#*jump_time
+
 	# --- FOR NINJA ONLY --- #
 #	if on_floor and not jumping:
 #		velocity.y = 0
@@ -171,12 +175,9 @@ func handle_collisions():
 
 func _on_animation_finished():
 	if anim.animation == "attack":
-		print("end attack")
+		# print("end attack")
 		anim.stop()
 		attacking = false
-		#print($attack_box.name)
-		#remove_child($attack_box)
-		$attack_box.queue_free()
 
 func _on_head_entered(body):
 	print("head enter")
@@ -189,25 +190,11 @@ func _on_head_entered(body):
 #		if body.jumping:
 #			rpc("get_killed")
 
-func create_attack_box():
-	var attack_box = Area2D.new()
-	var hit_box = CollisionShape2D.new()
-	var hit_shape = CircleShape2D.new()
-	hit_shape.radius = 5
-	hit_box.shape = hit_shape
-	attack_box.set_name("attack_box")
-	attack_box.add_child(hit_box)
-	attack_box.connect("body_entered", self, "_on_attack_box_entered")
-	add_child(attack_box)
-	if dir == 1:
-		attack_box.position.x += 20
-	else:
-		attack_box.position.x -= 20
-
 func _on_attack_box_entered(body):
-	print("ATTACK")
+	#print("ATTACK")
 	print(body.name)
-	if int(body.name) in gamestate.players or body.name == "ninja":
+	if int(body.name) in gamestate.players:# or body.name == "ninja" or body.name == "pirate":
+		print("ATTACK!")
 		body.get_killed()#body.rpc("get_killed")
 		#attacking = false
 		#jumping = false

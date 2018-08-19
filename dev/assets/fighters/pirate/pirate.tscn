@@ -1,21 +1,21 @@
 [gd_scene load_steps=26 format=2]
 
-[ext_resource path="res://gd/player.gd" type="Script" id=1]
+[ext_resource path="res://gd/pirate.gd" type="Script" id=1]
 [ext_resource path="res://assets/fighters/pirate/5x/idle_0.png" type="Texture" id=2]
 [ext_resource path="res://assets/fighters/pirate/5x/idle_1.png" type="Texture" id=3]
 [ext_resource path="res://assets/fighters/pirate/5x/idle_2.png" type="Texture" id=4]
 [ext_resource path="res://assets/fighters/pirate/5x/idle_3.png" type="Texture" id=5]
-[ext_resource path="res://assets/fighters/pirate/5x/jump_0.png" type="Texture" id=6]
-[ext_resource path="res://assets/fighters/pirate/5x/jump_1.png" type="Texture" id=7]
-[ext_resource path="res://assets/fighters/pirate/5x/jump_2.png" type="Texture" id=8]
-[ext_resource path="res://assets/fighters/pirate/5x/jump_3.png" type="Texture" id=9]
-[ext_resource path="res://assets/fighters/pirate/5x/jump_4.png" type="Texture" id=10]
-[ext_resource path="res://assets/fighters/pirate/5x/jump_5.png" type="Texture" id=11]
-[ext_resource path="res://assets/fighters/pirate/5x/attack_0.png" type="Texture" id=12]
-[ext_resource path="res://assets/fighters/pirate/5x/attack_1.png" type="Texture" id=13]
-[ext_resource path="res://assets/fighters/pirate/5x/attack_2.png" type="Texture" id=14]
-[ext_resource path="res://assets/fighters/pirate/5x/attack_3.png" type="Texture" id=15]
-[ext_resource path="res://assets/fighters/pirate/5x/attack_4.png" type="Texture" id=16]
+[ext_resource path="res://assets/fighters/pirate/5x/attack_0.png" type="Texture" id=6]
+[ext_resource path="res://assets/fighters/pirate/5x/attack_1.png" type="Texture" id=7]
+[ext_resource path="res://assets/fighters/pirate/5x/attack_2.png" type="Texture" id=8]
+[ext_resource path="res://assets/fighters/pirate/5x/attack_3.png" type="Texture" id=9]
+[ext_resource path="res://assets/fighters/pirate/5x/attack_4.png" type="Texture" id=10]
+[ext_resource path="res://assets/fighters/pirate/5x/jump_0.png" type="Texture" id=11]
+[ext_resource path="res://assets/fighters/pirate/5x/jump_1.png" type="Texture" id=12]
+[ext_resource path="res://assets/fighters/pirate/5x/jump_2.png" type="Texture" id=13]
+[ext_resource path="res://assets/fighters/pirate/5x/jump_3.png" type="Texture" id=14]
+[ext_resource path="res://assets/fighters/pirate/5x/jump_4.png" type="Texture" id=15]
+[ext_resource path="res://assets/fighters/pirate/5x/jump_5.png" type="Texture" id=16]
 [ext_resource path="res://assets/fighters/pirate/5x/run_0.png" type="Texture" id=17]
 [ext_resource path="res://assets/fighters/pirate/5x/run_1.png" type="Texture" id=18]
 [ext_resource path="res://assets/fighters/pirate/5x/run_2.png" type="Texture" id=19]
@@ -36,14 +36,14 @@ animations = [ {
 "name": "idle",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ) ],
-"loop": true,
-"name": "jump",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ) ],
+"frames": [ ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ) ],
 "loop": true,
 "name": "attack",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ) ],
+"loop": true,
+"name": "jump",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ) ],
@@ -57,7 +57,7 @@ animations = [ {
 custom_solver_bias = 0.0
 extents = Vector2( 25.1247, 17.6722 )
 
-[node name="pirate" type="KinematicBody2D" index="0"]
+[node name="pirate" type="KinematicBody2D"]
 
 input_pickable = false
 collision_layer = 1

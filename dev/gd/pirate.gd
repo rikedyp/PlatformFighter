@@ -4,6 +4,7 @@ extends "res://gd/player.gd"
 # var a = 2
 # var b = "textvar"
 export (int) var gun_kickback = 500
+var shooting = false
 
 func _ready():
 	# Called when the node is added to the scene for the first time.
@@ -24,10 +25,17 @@ func _custom_action(delta, attack):
 	if attacking:
 		attack_time += delta
 		if attack_time > 0.4 and attack_time < 0.44:
+			if not shooting:
+				shooting = true
+				shoot()
 			if dir == 1:
 				velocity.x = -gun_kickback
 			else:
 				velocity.x = gun_kickback
 		elif attack_time > 0.44:
 			velocity.x = 0
+			shooting = false
 			#attacking = false
+
+func shoot():
+	pass

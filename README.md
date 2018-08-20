@@ -15,3 +15,4 @@ Check Design.md for a comprehensive view of the project
 
 Godot version 3.0.6.stable.official.8314054
 
+Current issue: basic fight mechanics in branch: basic_fight

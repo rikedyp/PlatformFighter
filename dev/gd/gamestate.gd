@@ -17,16 +17,15 @@ var my_player
 var my_player_info = {
 	"name": "",
 	"scene_file": "",
-	#"animation": "", # TODO Alter this so animated characters are easy in future
 	"ready": false,
-	"score": [] # List of lap times
+	"lives": 1 # Current number of lives 
 	} 
 var my_towers = []
 # Details for remote players 
 var players = {} # dict by id:profile format
 # where profile is a dict "property": value
 # {id: {"name": "player_name", "scene_file" = "player_scene_path"}} etc.
-# name, scene, animation, ready, score
+# name, scene, ready, lives
 
 # Signals to let lobby GUI know what's going on
 signal player_list_changed()
@@ -114,12 +113,14 @@ remote func pre_start_game(spawn_points, max_rounds):
 			player.set_name(str(p_id)) # set unique id as node name
 			player.position = spawn_pos
 			player.set_player_name(my_player_info["name"])
+			player.lives = max_rounds
 		else:
 			# Otherwise set up player from peer
 			player = load(players[p_id]["scene_file"]).instance()
 			player.set_name(str(p_id))
 			player.position = spawn_pos
 			player.set_player_name(players[p_id]["name"])
+			player.lives = max_rounds
 		player.set_network_master(p_id) #set unique id as master
 		world.get_node("players").add_child(player)
 	if not get_tree().is_network_server():

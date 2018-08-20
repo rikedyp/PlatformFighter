@@ -7,6 +7,7 @@ export (int) var move_speed = 400
 export (int) var gravity = 50
 export (bool) var active = false
 var max_lives
+var lives
 var spawn_pos
 var anim
 var dir = 1
@@ -49,6 +50,8 @@ func set_player_name(new_name):
 	$label.set_text(new_name)
 
 func _process(delta):
+	if lives < 1:
+		gamestate.end_game()
 	pass
 
 func _physics_process(delta):
@@ -166,6 +169,7 @@ func _on_head_entered(body):
 		print(body.jumping)
 
 func get_killed():
+	lives -= 1
 	gamestate.rpc("respawn_player", name)
 
 

@@ -26,7 +26,7 @@ func _ready():
 #	# TODO check this does something
 #	get_node("connect").show()
 #	get_node("players").hide()
-#	get_node("vehicle_select").hide()
+#	get_node("player_select").hide()
 #	get_node("connect/error_label").text = "IP address in use"
 
 func _on_host_pressed():
@@ -72,11 +72,11 @@ func _on_game_ended():
 	show()
 	get_node("connect").show()
 	get_node("players").hide()
-	#get_node("vehicle_select").hide()
 	get_node("connect/host").disabled = false
 	get_node("connect/join").disabled
 
 func _on_game_error(errtxt):
+	print("GAME ERROR")
 	get_node("error").dialog_text = errtxt
 	get_node("error").popup_centered_minsize()
 

@@ -4,9 +4,9 @@ A platforming multiplayer fighting game a la TowerFall / Smash Bros etc.
 Current version 0.1  
 ![Progress](http://progressed.io/bar/100) 
 Try it!  
-[Windows]()
-[Mac OSX]()
-[Linux]()
+[Windows](https://github.com/rikedyp/PlatformFighter/tree/master/release/Windows)  
+[Mac OSX](https://github.com/rikedyp/PlatformFighter/tree/master/release/Mac%20OSX)  
+[Linux](https://github.com/rikedyp/PlatformFighter/tree/master/release/X11)  
 
 Version 0.2 progress  
 ![Progress](http://progressed.io/bar/0)  

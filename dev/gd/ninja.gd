@@ -1,10 +1,6 @@
 # ninja.gd
 extends "res://gd/player.gd"
 
-# class member variables go here, for example:
-# var a = 2
-# var b = "textvar"
-#var attacking = false
 var force_fall = false # flag for ninja slow-fall behaviour
 
 func _ready():
@@ -35,9 +31,8 @@ func create_attack_box():
 
 func _on_attack_box_entered(body):
 	print(body.name)
-	if int(body.name) in gamestate.players:# or body.name == "ninja" or body.name == "pirate":
+	if int(body.name) in gamestate.players:
 		print("ATTACK!")
-		#body.get_killed()
 
 #func _process(delta):
 #	# Called every frame. Delta is time since last frame.
@@ -51,6 +46,7 @@ func _custom_action(delta, attack):
 	else:
 		force_fall = false
 	if attack:
+		# Create attack box and connect to _on_attack_box_enter function
 		create_attack_box()
 		attack_time = 0.0
 		anim.set_animation("attack")
@@ -58,10 +54,7 @@ func _custom_action(delta, attack):
 		attacking = true
 	if attacking:
 		attack_time += delta
-		#print("attacking")
 		if attack_time > 0.3 and attack_time < 0.4:
-			# Create attack box and connect to _on_attack_box_enter function
-			#print(attack_time)
 			if dir == 1:
 				velocity.x = move_speed
 			else:
@@ -69,4 +62,3 @@ func _custom_action(delta, attack):
 	# Ninja slow-fall
 	if on_floor and not jumping and not force_fall:
 		velocity.y = 0
-

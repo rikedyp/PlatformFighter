@@ -86,7 +86,7 @@ position = Vector2( 213.783, 130.274 )
 position = Vector2( 513.489, 302.186 )
 anchor_mode = 1
 rotating = false
-current = false
+current = true
 zoom = Vector2( 1, 1 )
 limit_left = -10000000
 limit_top = -10000000
@@ -408,6 +408,43 @@ position = Vector2( 495.466, 596.659 )
 scale = Vector2( 5.80066, 0.548591 )
 texture = ExtResource( 6 )
 
-[node name="lives" type="Node2D" parent="." index="7"]
+[node name="lives" type="HBoxContainer" parent="." index="7"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 25.0
+margin_top = 21.0
+margin_right = 65.0
+margin_bottom = 61.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+alignment = 0
+
+[node name="label" type="Label" parent="lives" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 13.0
+margin_right = 105.0
+margin_bottom = 27.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "Lives:                 "
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Size Flags", "custom_fonts", "custom_styles" ]
 
 

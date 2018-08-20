@@ -22,23 +22,12 @@ func _ready():
 	gamestate.connect("game_ended", self, "_on_game_ended")
 	gamestate.connect("game_error", self, "_on_game_error")
 
-#func ip_in_use():
-#	# TODO check this does something
-#	get_node("connect").show()
-#	get_node("players").hide()
-#	get_node("player_select").hide()
-#	get_node("connect/error_label").text = "IP address in use"
-
 func _on_host_pressed():
-	# TODO set # laps
 	if get_node("connect/name").text == "":
 		get_node("connect/error_label").text = "Invalid name!"
 		return
 	$connect.hide()
-	# Only host accesses some settings
-	# TODO: Consider voting process (majority rules or MKart style)
 	$player_select.show()
-	# Only host can set game options e.g. # rounds
 	get_node("connect/error_label").text = ""
 	var player_name = get_node("connect/name").text
 	gamestate.host_game(player_name)
@@ -82,7 +71,6 @@ func _on_game_error(errtxt):
 
 func refresh_lobby(): 
 	var players = gamestate.players
-	var players_choosing = gamestate.get_players_ready()
 	get_node("players/list").clear()
 	if not gamestate.my_player_info["ready"]:
 		get_node("players/list").add_item(gamestate.my_player_info["name"] + " (You) [Choosing...]")
@@ -108,14 +96,6 @@ func refresh_lobby():
 func _on_start_pressed():
 	gamestate.rpc("set_max_rounds",int($settings/list/rounds.text))
 	gamestate.begin_game()
-
-#func free_child_nodes(node):
-#	# TODO is this still used?
-#	for child in node.get_children():
-#		child.queue_free()
-
-func _on_player_button_pressed():
-	pass
 
 func _on_ninja_pressed():
 	gamestate.my_player_info["scene_file"] = "res://assets/fighters/ninja/ninja.tscn"
@@ -143,4 +123,3 @@ func _on_ready_pressed():
 		# Only host can choose match settings for now
 		$settings.show()
 	refresh_lobby()
-	

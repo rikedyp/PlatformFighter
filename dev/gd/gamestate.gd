@@ -42,7 +42,6 @@ func _player_connected(id):
 
 # Callback from SceneTree
 func _player_disconnected(id):
-	# TODO: Elegant disconnects
 	if get_tree().is_network_server():
 		if has_node("/root/test_stage"): # Game is in progress
 			emit_signal("game_error", "Player " + players[id]["name"] + " disconnected")
@@ -97,20 +96,28 @@ remote func register_fighter(id, new_player_scene):
 
 remote func pre_start_game(spawn_points, max_rounds):
 	# Change scene
-	# TODO: Choose stage pre game
 	var world = load("res://assets/stages/test_stage.tscn").instance()
 	world.max_rounds = max_rounds
 	get_tree().get_root().add_child(world)
 	get_tree().get_root().get_node("lobby").hide()
-	#var player_scene = load(vehicle_scene)
 	for p_id in spawn_points:
 		var spawn_pos = world.get_node("spawn_points/" + str(spawn_points[p_id])).position
 		var player
+		var life_counter = VBoxContainer.new()
+		var name_label = Label.new()
+		name_label.set_name("name_label")
+		var life_label = Label.new()
+		life_label.set_name("life_label")
+		life_label.text = str(max_rounds)
+		life_counter.add_child(name_label)
+		life_counter.add_child(life_label)
 		if p_id == get_tree().get_network_unique_id():
 			# If node for this peer id, set up player here
 			my_player = load(my_player_info["scene_file"]).instance()
 			player = my_player
 			player.set_name(str(p_id)) # set unique id as node name
+			life_counter.set_name(str(p_id))
+			name_label.text = my_player_info["name"]
 			player.position = spawn_pos
 			player.set_player_name(my_player_info["name"])
 			player.lives = max_rounds
@@ -118,11 +125,15 @@ remote func pre_start_game(spawn_points, max_rounds):
 			# Otherwise set up player from peer
 			player = load(players[p_id]["scene_file"]).instance()
 			player.set_name(str(p_id))
+			life_counter.set_name(str(p_id))
+			name_label.text = players[p_id]["name"]
 			player.position = spawn_pos
 			player.set_player_name(players[p_id]["name"])
 			player.lives = max_rounds
-		player.set_network_master(p_id) #set unique id as master
+		player.set_network_master(p_id) # set unique id as master
 		world.get_node("players").add_child(player)
+		# Add life counters for each player
+		world.get_node("lives").add_child(life_counter)
 	if not get_tree().is_network_server():
 		# Tell server we are ready to start
 		rpc_id(1, "ready_to_start", get_tree().get_network_unique_id())
@@ -140,7 +151,6 @@ remote func ready_to_start(id):
 
 func host_game(new_player_name):
 	my_player_info["name"] = new_player_name
-	#my_player_info["ready"] = true
 	var host = NetworkedMultiplayerENet.new()
 	#host.set_compression_mode(NetworkedMultiplayerENet.COMPRESS_RANGE_CODER)
 	var err = host.create_server(default_port, max_peers) # max: 1 peer, since it's a 2 players game
@@ -152,39 +162,28 @@ func host_game(new_player_name):
 
 func join_game(ip, new_player_name):
 	my_player_info["name"] = new_player_name
-	#my_player["score"][0] = "Still racing"
 	var host = NetworkedMultiplayerENet.new()
 	host.create_client(ip, default_port)
 	get_tree().set_network_peer(host)
 
-func get_players_ready():
-	pass
-#	var players_ready = []
-#	for player in players:
-#		players_ready.append(players[player]["ready"])
-#	return players_ready
-
 func begin_game():
-#	if gamestate.my_player == null:
-#		print("You haven't chosen anything yet")
-#		return
 	if not my_player_info["ready"]:
-		# TODO GUI Warning
 		if gamestate.my_player == null:
 			print("You haven't chosen yet")
+			emit_signal("game_error", "You haven't chosen yet")
 			return
-		var printstring = gamestate.my_player["name"] + " yet to choose vehicle"
+		var printstring = gamestate.my_player["name"] + " yet to choose..."
 		print(printstring)
 		return
 	else:
 		for p in players:
 			if not players[p]["ready"]:
-				var printstring = players[p]["name"] + " yet to choose vehicle..."
+				var printstring = players[p]["name"] + " yet to choose..."
+				emit_signal("game_error", printstring)
 				print(printstring)
 				return
-	# TODO: verify all connected players have chosen vehicles
 	assert(get_tree().is_network_server())
-
+	
 	# Create a dictionary with peer id and respective spawn points, vehicle scenes and vehicle animations, could be improved by randomizing spawn points
 	var spawn_points = {}
 	spawn_points[1] = 1 # Server in spawn point 1
@@ -193,10 +192,10 @@ func begin_game():
 	for p in players:
 		spawn_points[p] = spawn_point_idx
 		spawn_point_idx += 1
-	# Call to pre-start game with the spawn points, vehicle types and colours
+	
+	# Call to pre-start game with the spawn points, max_rounds (lives)
 	for p in players:
 		rpc_id(p, "pre_start_game", spawn_points, max_rounds)
-
 	pre_start_game(spawn_points, max_rounds)
 
 func see_children(node):
@@ -206,15 +205,9 @@ func see_children(node):
 		see_children(child)
 
 func end_game():
-	print("--- end game")
-	#see_children(get_tree().get_root())
-	print("---")
-	# TODO generalise for any scene (levels) [choose scene]
 	if has_node("/root/test_stage"): # Game is in progress
 		# End it
-		print("has it")
 		get_node("/root/test_stage").queue_free()
-		# TODO free the level properly
 	get_tree().change_scene("res://assets/ui/lobby.tscn")
 	emit_signal("game_ended")
 	players.clear()
@@ -242,8 +235,7 @@ remote func update_score(id, score):
 	players[id]["score"] = score
 
 sync func respawn_player(id):
-	#print(id)
+	get_node("/root/test_stage").update_lives()
 	var node_name = "/root/test_stage/players/" + id
-	#print("resapwn")
 	var respawn_player = get_node(node_name)
 	respawn_player.set_global_position(get_node("/root/test_stage/spawn_points/0").get_global_position())

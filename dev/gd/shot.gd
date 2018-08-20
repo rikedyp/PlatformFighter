@@ -13,22 +13,14 @@ func _ready():
 	# Called when the node is added to the scene for the first time.
 	# Initialization here
 	connect("body_entered", self, "_on_body_entered")
-	#print(get_parent().name)
 	if dir == 0:
 		velocity.x = -speed
 	else:
 		velocity.x = speed
-	pass
 
 func _on_body_entered(body):
-	#print("SHOOT")
-	#print(body.name)
-	#print(enemies)
 	if int(body.name) in enemies:
 		body.get_killed()
 
 func _process(delta):
 	position += delta*velocity
-#	# Called every frame. Delta is time since last frame.
-#	# Update game logic here.
-#	pass

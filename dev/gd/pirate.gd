@@ -15,14 +15,13 @@ func _ready():
 #	pass
 
 func _custom_action(delta, attack):
+	# --- FIGHTER SPECIFIC ACTION --- #
 	if attack and not attacking:
 		attack_time = 0.0
 		anim.set_animation("attack")
 		anim.play()
 		attacking = true
-		#jumping = false
 	if attacking:
-		#velocity.y = 0
 		attack_time += delta
 		if attack_time > 0.4 and attack_time < 0.44:
 			if not shooting:
@@ -36,7 +35,6 @@ func _custom_action(delta, attack):
 		elif attack_time > 0.44:
 			velocity.x = 0
 			shooting = false
-			#attacking = false
 
 sync func shoot(enemies):
 	print("shoot")

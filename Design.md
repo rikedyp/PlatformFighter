@@ -74,9 +74,9 @@ If a TODO isn't essential for that release, put it into Future ideas section unt
 - fighters, collision layer for fighters
 - baddies, collision layer for baddies
 
-
 ### Future ideas
 - Quick fall maybe
+- Choose stage @ start of game
 - Game option choosing process
 	- Majority rule
 	- Dictatorship
@@ -89,6 +89,15 @@ If a TODO isn't essential for that release, put it into Future ideas section unt
 - Shoot head - hat off
 - Head jump
 - Invincibilty / no collision on respawn
+- Consider data compression | #host.set_compression_mode(NetworkedMultiplayerENet.COMPRESS_RANGE_CODER)
+- Test emit_signal("game_error")
+- End of game
+	- rematch
+	- match settings
+	- character select
+	- back to title
+- Title screen
+- UI Overlay for lives, menus etc.
 	
 ### Fighters
 - Ninja

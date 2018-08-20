@@ -19,7 +19,7 @@ var attacking = false
 var attack_time = 0.0
 var velocity = Vector2()
 
-# This updates the position for other clients
+# This updates the position for others on network
 slave func set_pos_and_motion(p_pos, p_vel, p_dir, attack_state, jump_state, animation, play):
 	position = p_pos
 	velocity = p_vel
@@ -52,19 +52,12 @@ func set_player_name(new_name):
 func _process(delta):
 	if lives < 1:
 		gamestate.end_game()
-	pass
 
 func _physics_process(delta):
-	pass
 	if active and int(get_name()) == get_tree().get_network_unique_id():
 		handle_input(delta)
 	handle_collisions()
 	rpc("set_pos_and_motion", position, velocity, dir, attacking, jumping, anim.get_animation(), anim.playing)
-	if Input.is_action_just_pressed("dodge"):
-		get_killed()
-	if Input.is_action_just_pressed("ui_select"):
-		# TODO: Check synchronisity of this type of input function
-		print("I'm ALIVE!")
 
 func handle_input(delta):
 	# --- GENERAL PLAYER INPUT AND MOTION --- #
@@ -88,12 +81,11 @@ func handle_input(delta):
 	if move_left and not attacking:
 		dir = 0
 		velocity.x = -move_speed
-		#print("move_left")
 		if not jumping:
 			anim.set_animation("run")
 		anim.flip_h = true
 		$hit_box.position.x = 20
-		$head.position.x = 30
+		$head.position.x = 40
 	elif move_right and not attacking:
 		dir = 1
 		velocity.x = move_speed
@@ -125,7 +117,6 @@ func _custom_action(delta, attack):
 		attacking = true
 	if attacking:
 		attack_time += delta
-		#print("attacking")
 		if attack_time > 0.3 and attack_time < 0.4:
 			if dir == 1:
 				velocity.x = move_speed
@@ -133,7 +124,7 @@ func _custom_action(delta, attack):
 				velocity.x = -move_speed
 
 func handle_collisions():
-	var normal = move_and_slide(velocity) # col = collision
+	var normal = move_and_slide(velocity)
 	if get_slide_count() != 0 :
 		for i in range (0,get_slide_count()) :
 			var col = get_slide_collision(i).collider
@@ -142,27 +133,23 @@ func handle_collisions():
 				jumping = false
 				on_floor = true
 				velocity.y = 0
-			if int(col.name) in gamestate.players:# or col.name == "ninja":
-				print("got em")
+			elif int(col.name) in gamestate.players:
 				jump_flag = 1
 				jumping = true
 				on_floor = false
 				if normal == Vector2(0, 0) and not attacking:
 					velocity.y -= jump_power
-				print("collision")
-				print(col.name)
-				if jumping:
-					col.get_killed()
+				# if jumping:
+				#	col.get_killed()
 
 func _on_animation_finished():
 	if anim.animation == "attack":
-		# print("end attack")
 		anim.stop()
 		attacking = false
 
 func _on_head_entered(body):
 	# Supposed to be used for head jump death, needs reworking (check col.get_killed() above)
-	if body.name in gamestate.players and body.name != get_name():# or body.name == "1":
+	if body.name in gamestate.players and body.name != get_name():
 		print("HEAD ENTER IN HERE")
 		print(body.name)
 		print(body.attacking)
@@ -171,7 +158,3 @@ func _on_head_entered(body):
 func get_killed():
 	lives -= 1
 	gamestate.rpc("respawn_player", name)
-
-
-
-

@@ -17,7 +17,7 @@ var my_player
 var my_player_info = {
 	"name": "",
 	"scene_file": "",
-	"animation": "", # TODO Alter this so animated characters are easy in future
+	#"animation": "", # TODO Alter this so animated characters are easy in future
 	"ready": false,
 	"score": [] # List of lap times
 	} 
@@ -43,6 +43,7 @@ func _player_connected(id):
 
 # Callback from SceneTree
 func _player_disconnected(id):
+	# TODO: Elegant disconnects
 	if get_tree().is_network_server():
 		if has_node("/root/world"): # Game is in progress
 			emit_signal("game_error", "Player " + players[id]["name"] + " disconnected")
@@ -70,7 +71,7 @@ func _connected_fail():
 	get_tree().set_network_peer(null) # Remove peer
 	emit_signal("connection_failed")
 
-# Lobby management functions
+# --- Lobby management functions --- #
 
 remote func register_player(id, new_player_dict):
 	# TODO set # laps
@@ -97,6 +98,7 @@ remote func register_fighter(id, new_player_scene):
 
 remote func pre_start_game(spawn_points, max_rounds):
 	# Change scene
+	# TODO: Choose stage pre game
 	var world = load("res://assets/stages/test_stage.tscn").instance()
 	world.max_rounds = max_rounds
 	get_tree().get_root().add_child(world)
@@ -206,7 +208,7 @@ func end_game():
 	print("--- end game")
 	#see_children(get_tree().get_root())
 	print("---")
-	# TODO generalise for any scene (levels)
+	# TODO generalise for any scene (levels) [choose scene]
 	if has_node("/root/track1"): # Game is in progress
 		# End it
 		print("has it")
@@ -239,8 +241,8 @@ remote func update_score(id, score):
 	players[id]["score"] = score
 
 sync func respawn_player(id):
-	print(id)
+	#print(id)
 	var node_name = "/root/test_stage/players/" + id
-	print("resapwn")
+	#print("resapwn")
 	var respawn_player = get_node(node_name)
 	respawn_player.set_global_position(get_node("/root/test_stage/spawn_points/0").get_global_position())

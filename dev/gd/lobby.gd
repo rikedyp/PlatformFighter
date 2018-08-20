@@ -80,12 +80,12 @@ func _on_game_error(errtxt):
 	get_node("error").dialog_text = errtxt
 	get_node("error").popup_centered_minsize()
 
-func refresh_lobby(): # sync func?
+func refresh_lobby(): 
 	var players = gamestate.players
 	var players_choosing = gamestate.get_players_ready()
 	get_node("players/list").clear()
 	if not gamestate.my_player_info["ready"]:
-		get_node("players/list").add_item(gamestate.my_player_info["name"] + " (You) [Choosing vehicle...]")
+		get_node("players/list").add_item(gamestate.my_player_info["name"] + " (You) [Choosing...]")
 	else:
 		get_node("players/list").add_item(gamestate.my_player_info["name"] + " (You) [Ready.]")
 	if not players.empty():
@@ -109,10 +109,10 @@ func _on_start_pressed():
 	gamestate.rpc("set_max_rounds",int($settings/list/rounds.text))
 	gamestate.begin_game()
 
-func free_child_nodes(node):
-	# TODO is this still used?
-	for child in node.get_children():
-		child.queue_free()
+#func free_child_nodes(node):
+#	# TODO is this still used?
+#	for child in node.get_children():
+#		child.queue_free()
 
 func _on_player_button_pressed():
 	pass
@@ -137,10 +137,10 @@ func _on_pirate_toggled(pressed):
 
 func _on_ready_pressed():
 	gamestate.ready_player()
-	#gamestate.my_player_info["ready"] = true
 	$player_select.hide()
 	$players.show()
 	if get_tree().get_network_unique_id() == 1:
+		# Only host can choose match settings for now
 		$settings.show()
-	#refresh_lobby()
+	refresh_lobby()
 	

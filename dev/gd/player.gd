@@ -148,7 +148,8 @@ func handle_collisions():
 					velocity.y -= jump_power
 				print("collision")
 				print(col.name)
-				col.get_killed()
+				if jumping:
+					col.get_killed()
 
 func _on_animation_finished():
 	if anim.animation == "attack":

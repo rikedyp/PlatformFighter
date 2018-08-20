@@ -28,7 +28,7 @@ func _custom_action(delta, attack):
 			if not shooting:
 				shooting = true
 				#shoot()
-				rpc("shoot")
+				rpc("shoot", gamestate.players)
 			if dir == 1:
 				velocity.x = -gun_kickback
 			else:
@@ -38,10 +38,10 @@ func _custom_action(delta, attack):
 			shooting = false
 			#attacking = false
 
-sync func shoot():
+sync func shoot(enemies):
 	print("shoot")
 	var shot = load("res://assets/fighters/pirate/shot.tscn").instance()
-	shot.enemies = gamestate.players # who's gamestate?
+	shot.enemies = enemies#gamestate.players # who's gamestate?
 	shot.dir = dir
 	shot.position = get_global_position()
 	get_parent().get_parent().add_child(shot)

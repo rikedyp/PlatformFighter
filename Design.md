@@ -68,6 +68,13 @@ ToDo | In Progress | Done | Testing
 All TODOs, including inside .gd file comments, must be completed before a release is considered ready  
 If a TODO isn't essential for that release, put it into Future ideas section until development of the next version commences.  
 
+##### Collision Layers
+- null, for collision objects which don't want to collide (usually temporary e.g. respawn / shield cooldown)
+- floor, collision layer for stage floors etc.
+- fighters, collision layer for fighters
+- baddies, collision layer for baddies
+
+
 ### Future ideas
 - Quick fall maybe
 - Game option choosing process

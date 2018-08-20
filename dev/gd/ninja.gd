@@ -33,6 +33,12 @@ func create_attack_box():
 	else:
 		attack_box.position.x -= 20
 
+func _on_attack_box_entered(body):
+	print(body.name)
+	if int(body.name) in gamestate.players:# or body.name == "ninja" or body.name == "pirate":
+		print("ATTACK!")
+		#body.get_killed()
+
 #func _process(delta):
 #	# Called every frame. Delta is time since last frame.
 #	# Update game logic here.

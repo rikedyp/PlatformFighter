@@ -39,7 +39,6 @@ func _ready():
 	# Called every time the node is added to the scene.
 	# Initialization here
 	$head.connect("body_entered", self, "_on_head_entered")
-	#$body.connect("body_entered", self, "_on_body_entered")
 	anim = $animated_sprite
 	anim.connect("animation_finished", self, "_on_animation_finished")
 	set_physics_process(true)
@@ -107,21 +106,16 @@ func handle_input(delta):
 		velocity.x = 0
 	elif jumping:
 		velocity.x = 0
-	#if not jumping:
-		# bug fix - need to make so can safely jump and attack
 	_custom_action(delta, attack)
 	if attacking:
 		velocity.y = 0
 	else:
-		acceleration.y += gravity#*jump_time
-	#print(velocity)
-	#if not on_floor:
-	velocity += acceleration#*jump_time
+		acceleration.y += gravity
+	velocity += acceleration
 
 func _custom_action(delta, attack):
 	# --- FIGHTER SPECIFIC ACTION --- #
 	if attack:
-		#create_attack_box()
 		attack_time = 0.0
 		anim.set_animation("attack")
 		anim.play()
@@ -130,8 +124,6 @@ func _custom_action(delta, attack):
 		attack_time += delta
 		#print("attacking")
 		if attack_time > 0.3 and attack_time < 0.4:
-			# Create attack box and connect to _on_attack_box_enter function
-			#print(attack_time)
 			if dir == 1:
 				velocity.x = move_speed
 			else:
@@ -141,19 +133,13 @@ func handle_collisions():
 	var normal = move_and_slide(velocity) # col = collision
 	if get_slide_count() != 0 :
 		for i in range (0,get_slide_count()) :
-			#$label.text = str(get_slide_collision(i).collider.name) + "   " + str(gamestate.players)
-#			for player in gamestate.players:
-#				print(player)
 			var col = get_slide_collision(i).collider
-			#print(col.name)
 			if col.name == "floor":
-				#print("on floor")
 				jump_flag = 2
 				jumping = false
 				on_floor = true
 				velocity.y = 0
 			if int(col.name) in gamestate.players:# or col.name == "ninja":
-				#print(normal)
 				print("got em")
 				jump_flag = 1
 				jumping = true
@@ -162,7 +148,7 @@ func handle_collisions():
 					velocity.y -= jump_power
 				print("collision")
 				print(col.name)
-				#col.get_killed()
+				col.get_killed()
 
 func _on_animation_finished():
 	if anim.animation == "attack":
@@ -171,35 +157,20 @@ func _on_animation_finished():
 		attacking = false
 
 func _on_head_entered(body):
-	print("head enter")
-	print(body.name)
+	#print("head enter")
+	#print(body.name)
 	#print(body.jumping)
-	print("players")
-	print(gamestate.players)
+	#print("players")
+	#print(gamestate.players)
 	if body.name in gamestate.players and body.name != get_name():# or body.name == "1":
+		print("HEAD ENTER IN HERE")
 		print(body.name)
 		print(body.attacking)
 		print(body.jumping)
-		if body.jumping:
-			get_killed()
-#		if body.jumping:
-#			rpc("get_killed")
-
-func _on_attack_box_entered(body):
-	#print("ATTACK")
-	print(body.name)
-	if int(body.name) in gamestate.players:# or body.name == "ninja" or body.name == "pirate":
-		print("ATTACK!")
-		body.get_killed()#body.rpc("get_killed")
-		#attacking = false
-		#jumping = false
-		#position.x -= 20
 
 func get_killed():
-	#print(name)
 	gamestate.rpc("respawn_player", name)
-	#queue_free()
-	# TODO: Respawn
+
 
 
 

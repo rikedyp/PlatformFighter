@@ -1,9 +1,6 @@
 # pirate.gd
 extends "res://gd/player.gd"
 
-# class member variables go here, for example:
-# var a = 2
-# var b = "textvar"
 export (int) var gun_kickback = 500
 var shooting = false
 
@@ -30,7 +27,8 @@ func _custom_action(delta, attack):
 		if attack_time > 0.4 and attack_time < 0.44:
 			if not shooting:
 				shooting = true
-				shoot()
+				#shoot()
+				rpc("shoot")
 			if dir == 1:
 				velocity.x = -gun_kickback
 			else:
@@ -40,10 +38,10 @@ func _custom_action(delta, attack):
 			shooting = false
 			#attacking = false
 
-func shoot():
+sync func shoot():
 	print("shoot")
 	var shot = load("res://assets/fighters/pirate/shot.tscn").instance()
-	#add_child(shot)
+	shot.enemies = gamestate.players # who's gamestate?
 	shot.dir = dir
 	shot.position = get_global_position()
 	get_parent().get_parent().add_child(shot)

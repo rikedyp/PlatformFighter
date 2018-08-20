@@ -1,12 +1,11 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://gd/test_stage.gd" type="Script" id=1]
-[ext_resource path="res://assets/fighters/ninja/ninja.tscn" type="PackedScene" id=2]
-[ext_resource path="res://assets/ui/kenney_ui/PNG/blue_button13.png" type="Texture" id=3]
-[ext_resource path="res://assets/fonts/HUD.tres" type="DynamicFont" id=4]
-[ext_resource path="res://assets/ui/kenney_ui/PNG/grey_button12.png" type="Texture" id=5]
-[ext_resource path="res://assets/ui/kenney_ui/PNG/grey_button13.png" type="Texture" id=6]
-[ext_resource path="res://assets/ui/kenney_ui/PNG/blue_button05.png" type="Texture" id=7]
+[ext_resource path="res://assets/ui/kenney_ui/PNG/blue_button13.png" type="Texture" id=2]
+[ext_resource path="res://assets/fonts/HUD.tres" type="DynamicFont" id=3]
+[ext_resource path="res://assets/ui/kenney_ui/PNG/grey_button12.png" type="Texture" id=4]
+[ext_resource path="res://assets/ui/kenney_ui/PNG/grey_button13.png" type="Texture" id=5]
+[ext_resource path="res://assets/ui/kenney_ui/PNG/blue_button05.png" type="Texture" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -65,10 +64,6 @@ shape = SubResource( 3 )
 
 [node name="players" type="Node2D" parent="." index="1"]
 
-[node name="ninja" parent="players" index="0" instance=ExtResource( 2 )]
-
-position = Vector2( 809.343, 520.268 )
-
 [node name="spawn_points" type="Node2D" parent="." index="2"]
 
 [node name="0" type="Position2D" parent="spawn_points" index="0"]
@@ -109,7 +104,7 @@ editor_draw_drag_margin = false
 
 editor/display_folded = true
 position = Vector2( 507.498, 132.126 )
-texture = ExtResource( 3 )
+texture = ExtResource( 2 )
 
 [node name="timer" type="Timer" parent="countdown" index="0"]
 
@@ -134,7 +129,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 4 )
+custom_fonts/font = ExtResource( 3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Ready"
 percent_visible = 1.0
@@ -209,8 +204,8 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-texture_normal = ExtResource( 5 )
-texture_pressed = ExtResource( 6 )
+texture_normal = ExtResource( 4 )
+texture_pressed = ExtResource( 5 )
 _sections_unfolded = [ "Textures" ]
 
 [node name="label" type="Label" parent="on_screen_controls/control_buttons/jump" index="0"]
@@ -229,7 +224,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 4 )
+custom_fonts/font = ExtResource( 3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "J"
 percent_visible = 1.0
@@ -258,8 +253,8 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-texture_normal = ExtResource( 5 )
-texture_pressed = ExtResource( 6 )
+texture_normal = ExtResource( 4 )
+texture_pressed = ExtResource( 5 )
 
 [node name="label" type="Label" parent="on_screen_controls/control_buttons/attack" index="0"]
 
@@ -277,7 +272,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 4 )
+custom_fonts/font = ExtResource( 3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "A"
 percent_visible = 1.0
@@ -306,8 +301,8 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-texture_normal = ExtResource( 5 )
-texture_pressed = ExtResource( 6 )
+texture_normal = ExtResource( 4 )
+texture_pressed = ExtResource( 5 )
 _sections_unfolded = [ "Textures" ]
 
 [node name="label" type="Label" parent="on_screen_controls/control_buttons/left" index="0"]
@@ -326,7 +321,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 4 )
+custom_fonts/font = ExtResource( 3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "<--"
 percent_visible = 1.0
@@ -355,8 +350,8 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-texture_normal = ExtResource( 5 )
-texture_pressed = ExtResource( 6 )
+texture_normal = ExtResource( 4 )
+texture_pressed = ExtResource( 5 )
 _sections_unfolded = [ "Textures" ]
 
 [node name="label" type="Label" parent="on_screen_controls/control_buttons/right" index="0"]
@@ -375,7 +370,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 4 )
+custom_fonts/font = ExtResource( 3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "-->"
 percent_visible = 1.0
@@ -387,18 +382,18 @@ _sections_unfolded = [ "custom_colors", "custom_fonts" ]
 
 position = Vector2( 231.085, 286.005 )
 scale = Vector2( 1.78705, 0.548591 )
-texture = ExtResource( 7 )
+texture = ExtResource( 6 )
 
 [node name="blue_button06" type="Sprite" parent="." index="7"]
 
 position = Vector2( 792.267, 291.016 )
 scale = Vector2( 1.78705, 0.548591 )
-texture = ExtResource( 7 )
+texture = ExtResource( 6 )
 
 [node name="blue_button07" type="Sprite" parent="." index="8"]
 
 position = Vector2( 495.466, 596.659 )
 scale = Vector2( 5.80066, 0.548591 )
-texture = ExtResource( 7 )
+texture = ExtResource( 6 )
 
 

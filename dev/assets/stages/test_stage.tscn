@@ -22,13 +22,14 @@ extents = Vector2( 1006.73, 10 )
 custom_solver_bias = 0.0
 extents = Vector2( 10, 587.84 )
 
-[node name="test_stage" type="Node2D"]
+[node name="test_stage" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 zoom_factor = 0.5
 
 [node name="floor" type="StaticBody2D" parent="." index="0"]
 
+editor/display_folded = true
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -66,13 +67,19 @@ shape = SubResource( 3 )
 
 [node name="spawn_points" type="Node2D" parent="." index="2"]
 
+editor/display_folded = true
+
 [node name="0" type="Position2D" parent="spawn_points" index="0"]
 
-position = Vector2( 213.783, 130.274 )
+position = Vector2( 501.102, 41.0097 )
 
 [node name="1" type="Position2D" parent="spawn_points" index="1"]
 
 position = Vector2( 813.379, 133.615 )
+
+[node name="2" type="Position2D" parent="spawn_points" index="2"]
+
+position = Vector2( 213.783, 130.274 )
 
 [node name="camera" type="Camera2D" parent="." index="3"]
 
@@ -139,6 +146,7 @@ _sections_unfolded = [ "custom_colors", "custom_fonts" ]
 
 [node name="on_screen_controls" type="Control" parent="." index="5"]
 
+editor/display_folded = true
 visible = false
 anchor_left = 0.0
 anchor_top = 0.0
@@ -378,22 +386,28 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "custom_colors", "custom_fonts" ]
 
-[node name="blue_button05" type="Sprite" parent="." index="6"]
+[node name="graphics" type="Node2D" parent="." index="6"]
+
+editor/display_folded = true
+
+[node name="blue_button05" type="Sprite" parent="graphics" index="0"]
 
 position = Vector2( 231.085, 286.005 )
 scale = Vector2( 1.78705, 0.548591 )
 texture = ExtResource( 6 )
 
-[node name="blue_button06" type="Sprite" parent="." index="7"]
+[node name="blue_button06" type="Sprite" parent="graphics" index="1"]
 
 position = Vector2( 792.267, 291.016 )
 scale = Vector2( 1.78705, 0.548591 )
 texture = ExtResource( 6 )
 
-[node name="blue_button07" type="Sprite" parent="." index="8"]
+[node name="blue_button07" type="Sprite" parent="graphics" index="2"]
 
 position = Vector2( 495.466, 596.659 )
 scale = Vector2( 5.80066, 0.548591 )
 texture = ExtResource( 6 )
+
+[node name="lives" type="Node2D" parent="." index="7"]
 
 

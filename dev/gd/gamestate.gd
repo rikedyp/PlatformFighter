@@ -45,7 +45,7 @@ func _player_connected(id):
 func _player_disconnected(id):
 	# TODO: Elegant disconnects
 	if get_tree().is_network_server():
-		if has_node("/root/world"): # Game is in progress
+		if has_node("/root/test_stage"): # Game is in progress
 			emit_signal("game_error", "Player " + players[id]["name"] + " disconnected")
 			end_game()
 		else: # Game is not in progress
@@ -186,8 +186,8 @@ func begin_game():
 
 	# Create a dictionary with peer id and respective spawn points, vehicle scenes and vehicle animations, could be improved by randomizing spawn points
 	var spawn_points = {}
-	spawn_points[1] = 0 # Server in spawn point 0
-	var spawn_point_idx = 1
+	spawn_points[1] = 1 # Server in spawn point 1
+	var spawn_point_idx = 2
 	# Assign spawn points
 	for p in players:
 		spawn_points[p] = spawn_point_idx
@@ -209,12 +209,12 @@ func end_game():
 	#see_children(get_tree().get_root())
 	print("---")
 	# TODO generalise for any scene (levels) [choose scene]
-	if has_node("/root/track1"): # Game is in progress
+	if has_node("/root/test_stage"): # Game is in progress
 		# End it
 		print("has it")
-		get_node("/root/track1").queue_free()
+		get_node("/root/test_stage").queue_free()
 		# TODO free the level properly
-	get_tree().change_scene("res://lobby.tscn")
+	get_tree().change_scene("res://assets/ui/lobby.tscn")
 	emit_signal("game_ended")
 	players.clear()
 	get_tree().set_network_peer(null) # End networking

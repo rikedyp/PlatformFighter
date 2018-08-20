@@ -87,6 +87,8 @@ If a TODO isn't essential for that release, put it into Future ideas section unt
 - Dodge 
 	- Super dodge
 - Shoot head - hat off
+- Head jump
+- Invincibilty / no collision on respawn
 	
 ### Fighters
 - Ninja

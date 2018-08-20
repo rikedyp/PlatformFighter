@@ -158,11 +158,7 @@ func _on_animation_finished():
 		attacking = false
 
 func _on_head_entered(body):
-	#print("head enter")
-	#print(body.name)
-	#print(body.jumping)
-	#print("players")
-	#print(gamestate.players)
+	# Supposed to be used for head jump death, needs reworking (check col.get_killed() above)
 	if body.name in gamestate.players and body.name != get_name():# or body.name == "1":
 		print("HEAD ENTER IN HERE")
 		print(body.name)

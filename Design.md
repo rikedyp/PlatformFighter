@@ -5,14 +5,14 @@ Made with Godot 3
 Design notes and future ideas
 
 CONTENTS  
-[Overview](#overview)  
-[Gameplay](#gameplay)  
-[Godot project structure](#godot-project-structure)  
-[Development](#development)
-[Multiplayer methods](#multiplayer-methods)
-[Future ideas](#future-ideas)  
-[Fighters](#fighters)
-[Stages](#stages)
+- [Overview](#overview)  
+- [Gameplay](#gameplay)  
+- [Godot project structure](#godot-project-structure)  
+- [Development](#development)
+- [Multiplayer methods](#multiplayer-methods)
+- [Future ideas](#future-ideas)  
+- [Fighters](#fighters)
+- [Stages](#stages)
   
 ### Overview
 - Open Source Towerfall / Smash Bros clone

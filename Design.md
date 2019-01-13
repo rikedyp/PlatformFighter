@@ -98,6 +98,10 @@ If a TODO isn't essential for that release, put it into Future ideas section unt
 	- back to title
 - Title screen
 - UI Overlay for lives, menus etc.
+- https://0x72.itch.io/dungeontileset-ii
+- https://0x72.itch.io/16x16-dungeon-tileset
+- https://thkaspar.itch.io/micro-character-bases
+- https://rvros.itch.io/animated-pixel-hero
 	
 ### Fighters
 - Ninja
